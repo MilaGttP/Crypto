@@ -9,14 +9,16 @@
 
   <ItemGroup>
     <None Remove="Logo\BTC.jpg" />
+    <None Remove="Logo\Dragonchain.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.9" />
     <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Logo\BTC.jpg" />
+    <Resource Include="Logo\Dragonchain.png" />
   </ItemGroup>
 
 </Project>
