@@ -37,7 +37,16 @@
             <Image Source="Logo/Dragonchain.png" Width="85" Margin="20 0 0 0"/>
             <TextBlock Text="Crypto" Foreground="White" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
-       
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  Background="#04255E" Margin="0,105,0,0" Grid.RowSpan="2"/>
+        <ListView x:Name="Search" Grid.Row="0" Grid.Column="1" Margin="470,53,10,53" RenderTransformOrigin="0.5,0.5" Width="320" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListView.RenderTransform>
+        </ListView>
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Background="#04255E" Margin="0,105,0,0" Grid.RowSpan="2"/>
     </Grid>
 </Window>
