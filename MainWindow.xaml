@@ -38,7 +38,7 @@
             <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
             <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
-        <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Right">
+        <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Center" Background="#586EE4" IsEditable="True" Foreground="Azure">
             <ComboBoxItem>Btc</ComboBoxItem>
             <ComboBoxItem>Eth</ComboBoxItem>
             <ComboBoxItem>Exp</ComboBoxItem>

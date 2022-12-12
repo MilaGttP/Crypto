@@ -10,21 +10,14 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.3*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="0.2*"/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.3*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         
-        <Button Grid.Row="0" Grid.Column="2" BorderBrush="White" Foreground="White" Background="Transparent" Content="Wallet" Height="25" FontSize="12" FontWeight="ExtraBold" Width="100">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
         <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Back" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
@@ -38,7 +31,8 @@
             <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
 
-        <StackPanel x:Name="Information" Grid.ColumnSpan="4" Grid.Row="1" Background="#27378C" Orientation="Vertical">
+        <TextBlock Text="Client" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+        <StackPanel x:Name="Information" Grid.Column="0" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical">
             <Label x:Name="nameCl" FontSize="12" Foreground="White" Visibility="Visible">
                 <TextBlock>
                     <Run Text="Name: "/>
@@ -48,6 +42,32 @@
             <Label x:Name="surnameCl" FontSize="12" Foreground="White" Visibility="Visible">
                 <TextBlock>
                     <Run Text="Surname: "/>
+                    <Run Text="{}"/>
+                </TextBlock>
+            </Label>
+            <Label x:Name="mail" FontSize="12" Foreground="White" Visibility="Visible">
+                <TextBlock>
+                    <Run Text="E-mail: "/>
+                    <Run Text="{}"/>
+                </TextBlock>
+            </Label>
+            <Label x:Name="totalSumm" FontSize="12" Foreground="White" Visibility="Visible">
+                <TextBlock>
+                    <Run Text="Total summ: "/>
+                    <Run Text="{}"/>
+                </TextBlock>
+            </Label>
+        </StackPanel>
+
+        <TextBlock Text="Your history" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+        <StackPanel x:Name="History" Grid.Column="1" Grid.Row="2" Background="#27378C" Orientation="Vertical">
+        </StackPanel>
+
+                <TextBlock Text="Wallet" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        <StackPanel x:Name="Wallet" Grid.Column="2" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical">
+            <Label x:Name="summ" FontSize="12" Foreground="White" Visibility="Visible">
+                <TextBlock>
+                    <Run Text="Summ: "/>
                     <Run Text="{}"/>
                 </TextBlock>
             </Label>
