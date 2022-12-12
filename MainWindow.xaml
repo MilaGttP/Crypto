@@ -34,7 +34,7 @@
             </Button.Resources>
         </Button>
         <StackPanel Orientation="Horizontal">
-            <Image Source="Logo/Dragonchain.png" Width="85" Margin="20 0 0 0"/>
+            <Image Source="Logo/Counterparty.png" Width="85" Margin="20 0 0 0"/>
             <TextBlock Text="Crypto" Foreground="White" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
         <ListView x:Name="Search" Grid.Row="0" Grid.Column="1" Margin="470,53,10,53" RenderTransformOrigin="0.5,0.5" Width="320" d:ItemsSource="{d:SampleData ItemCount=5}">
@@ -48,7 +48,7 @@
             </ListView.RenderTransform>
         </ListView>
         <TextBlock Text="Coins" Foreground="White" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="14,65,0,0" Grid.Row="1"/>
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Background="#27378C" Margin="0,105,0,0" Grid.RowSpan="2">
+        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Background="#27378C" Margin="0,105,0,0" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="NameC" Width="80">
                     <DataGridTemplateColumn.CellTemplate>
@@ -81,7 +81,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Text="Trade history" Foreground="White" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="14,65,0,0" Grid.Row="1" Grid.Column="1"/>
-        <DataGrid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Background="#27378C" Margin="0,105,0,0" Grid.RowSpan="2">
+        <DataGrid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Background="#27378C" Margin="0,105,0,0" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Id" Width="50">
                     <DataGridTemplateColumn.CellTemplate>

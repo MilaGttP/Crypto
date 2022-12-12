@@ -16,25 +16,13 @@ using System.Windows.Shapes;
 namespace Crypto
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для Page.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page : UserControl
     {
-        public MainWindow()
+        public Page()
         {
             InitializeComponent();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-        private void ClickDetals(object sender, MouseButtonEventArgs e)
-        {
-            NavigationWindow win = new NavigationWindow();
-            win.Content = new Page();
-            win.Show();
-            this.Close();
         }
     }
 }

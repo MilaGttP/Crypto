@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Logo\BTC.jpg" />
+    <None Remove="Logo\Counterparty.png" />
     <None Remove="Logo\Dragonchain.png" />
   </ItemGroup>
 
@@ -18,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Logo\Dragonchain.png" />
+    <Resource Include="Logo\Counterparty.png" />
   </ItemGroup>
 
 </Project>
