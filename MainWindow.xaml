@@ -9,24 +9,25 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="0.6*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.2*"/>
             <ColumnDefinition Width="0.2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="2" BorderBrush="White" Foreground="White" Background="Transparent" Content="Input" Height="25" FontSize="14" FontWeight="ExtraBold" Width="80">
+        <Button Grid.Row="0" Grid.Column="2" BorderBrush="White" Foreground="White" Background="Transparent" Content="Input" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Registration" Height="25" FontSize="13" FontWeight="ExtraBold" Width="100">
+        <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Registration" Height="25" FontSize="12" FontWeight="ExtraBold" Width="110">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -34,30 +35,31 @@
             </Button.Resources>
         </Button>
         <StackPanel Orientation="Horizontal">
-            <Image Source="Logo/Counterparty.png" Width="85" Margin="20 0 0 0"/>
-            <TextBlock Text="Crypto" Foreground="White" FontSize="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
+            <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
+            <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
-        <ListView x:Name="Search" Grid.Row="0" Grid.Column="1" Margin="470,53,10,53" RenderTransformOrigin="0.5,0.5" Width="320" d:ItemsSource="{d:SampleData ItemCount=5}">
-            <ListView.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ListView.RenderTransform>
-        </ListView>
-        <TextBlock Text="Coins" Foreground="White" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="14,65,0,0" Grid.Row="1"/>
-        <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Background="#27378C" Margin="0,105,0,0" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals">
+        <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Right">
+            <ComboBoxItem>Btc</ComboBoxItem>
+            <ComboBoxItem>Eth</ComboBoxItem>
+            <ComboBoxItem>Exp</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Text="Coins" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+        <DataGrid Grid.Row="2" Grid.Column="0" Background="#3A4CA9" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="NameC" Width="80">
+                <DataGridTemplateColumn Header="NameC" Width="110">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding NameC}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="TypeC" Width="50">
+                <DataGridTemplateColumn Header="TypeC" Width="90">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding TypeC}"/>
@@ -80,8 +82,14 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Text="Trade history" Foreground="White" FontSize="15" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="14,65,0,0" Grid.Row="1" Grid.Column="1"/>
-        <DataGrid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Background="#27378C" Margin="0,105,0,0" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals" SelectionChanged="DataGrid_SelectionChanged">
+        <TextBlock Text="Trade history" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+        <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Background="#27378C" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Id" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
@@ -90,7 +98,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Name" Width="300">
+                <DataGridTemplateColumn Header="Name" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}"/>
@@ -104,14 +112,14 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Price" Width="300">
+                <DataGridTemplateColumn Header="Price" Width="200">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Price}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Amount" Width="200">
+                <DataGridTemplateColumn Header="Amount" Width="180">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Amount}"/>

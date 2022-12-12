@@ -29,6 +29,7 @@ namespace Crypto
         {
 
         }
+
         private void ClickDetals(object sender, MouseButtonEventArgs e)
         {
             NavigationWindow win = new NavigationWindow();

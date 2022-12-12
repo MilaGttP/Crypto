@@ -7,6 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="1024" d:DesignWidth="1440" Background="#04255E">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
         
+        <Button Grid.Row="0" Grid.Column="2" BorderBrush="White" Foreground="White" Background="Transparent" Content="Wallet" Height="25" FontSize="12" FontWeight="ExtraBold" Width="100">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Back" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
+            <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
+        </StackPanel>
+
+        <StackPanel x:Name="Information" Grid.ColumnSpan="4" Grid.Row="1" Background="#27378C" Orientation="Vertical">
+            <Label x:Name="nameCl" FontSize="12" Foreground="White" Visibility="Visible">
+                <TextBlock>
+                    <Run Text="Name: "/>
+                    <Run Text="{}"/>
+                </TextBlock>
+            </Label>
+            <Label x:Name="surnameCl" FontSize="12" Foreground="White" Visibility="Visible">
+                <TextBlock>
+                    <Run Text="Surname: "/>
+                    <Run Text="{}"/>
+                </TextBlock>
+            </Label>
+        </StackPanel>
     </Grid>
 </UserControl>
