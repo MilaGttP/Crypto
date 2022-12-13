@@ -12,14 +12,14 @@ namespace Crypto
     {
 
         //метод щоб додати акаунт в БД
-        public static async Task AddAccountDBAsync(Accounts accounts)
+        public static void AddAccountDB(Accounts accounts)
         {
             try
             {
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
                     currencyDB.Accounts.Add(accounts);
-                    await currencyDB.SaveChangesAsync();
+                    currencyDB.SaveChangesAsync();
                 }
             }
             catch (Exception ex)
@@ -29,14 +29,14 @@ namespace Crypto
         }
         //метод, щоб додати дії з покупки валюти до БД
         //викликати метод - SaveLoadfromDB.AddHistoryDB(history).Wait();
-        public static async Task AddHistoryDBAsync(HistoryAccount history)
+        public static void AddHistoryDB(HistoryAccount history)
         {
             try
             {
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
                     currencyDB.HistoryAccount.Add(history);
-                    await currencyDB.SaveChangesAsync();
+                    currencyDB.SaveChanges();
                 }
             }
             catch (Exception ex)
@@ -46,14 +46,14 @@ namespace Crypto
         }
         //метод, щоб додати інформацію про гаманець користувача в БД
         //викликати метод - SaveLoadfromDB.AddWalletDB(wallet).Wait();
-        public static async Task AddWalletDBAsync(Notecase wallet)
+        public static void AddWalletDB(Notecase wallet)
         {
             try
             {
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
                     currencyDB.Notecase.Add(wallet);
-                    await currencyDB.SaveChangesAsync();
+                    currencyDB.SaveChangesAsync();
                 }
             }
             catch (Exception ex)
@@ -66,17 +66,17 @@ namespace Crypto
         //Отримати результат- List<History> history = new List<History>();
         //var tmp = SaveLoadfromDB.GetAccountHistory(1);
         //history = tmp.Result;
-        public static async Task<List<HistoryAccount>> GetAccountHistoryAsync(int IdUser)
+        public static List<HistoryAccount> GetAccountHistory(int IdUser)
         {
             List<HistoryAccount> history = new List<HistoryAccount>();
             try
             {
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
-                    history = await (from lst in currencyDB.HistoryAccount
-                                     where lst.Id_account == IdUser
-                                     orderby lst.Transaction_date
-                                     select lst).ToListAsync<HistoryAccount>();
+                    history = (from lst in currencyDB.HistoryAccount
+                               where lst.Id_account == IdUser
+                               orderby lst.Transaction_date
+                               select lst).ToList<HistoryAccount>();
                 }
                 if (history.Count == 0)
                 {
@@ -90,16 +90,16 @@ namespace Crypto
             return history;
         }
         //метод для перевірки наявності акаунту в БД за ел.адресою
-        public static async Task<Accounts> GetAccountAsync(string EmailUser)
+        public static Accounts GetAccount(string EmailUser)
         {
             Accounts account = new Accounts();
             try
             {
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
-                    account = await (from lst in currencyDB.Accounts
-                                     where lst.Email == EmailUser
-                                     select lst).FirstOrDefaultAsync<Accounts>();
+                    account = (from lst in currencyDB.Accounts
+                               where lst.Email == EmailUser
+                               select lst).FirstOrDefaultAsync<Accounts>().Result;
                 }
             }
             catch (Exception ex)
@@ -110,16 +110,16 @@ namespace Crypto
         }
 
         //метод для пошуку гаманця користувача в бд
-        public static async Task<Notecase> GetAccountWalletAsync(int IdUser)
+        public static Notecase GetAccountWallet(int IdUser)
         {
             Notecase wallet = new Notecase();
             try
             {
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
-                    wallet = await (from lst in currencyDB.Notecase
-                                    where lst.Id_account == IdUser
-                                    select lst).FirstOrDefaultAsync<Notecase>();
+                    wallet = (from lst in currencyDB.Notecase
+                              where lst.Id_account == IdUser
+                              select lst).FirstOrDefault<Notecase>();
                 }
                 if (wallet == null)
                 {
@@ -135,7 +135,7 @@ namespace Crypto
         }
 
         //метод для зміни суми гаманця в БД
-        public static async Task UpdateWalletAsync(int id, decimal totalSum)
+        public static void UpdateWallet(int id, decimal totalSum)
         {
             try
             {
@@ -145,19 +145,20 @@ namespace Crypto
 
                     if (tmp != null)
                     {
-                        tmp.Sum= totalSum;
-                        currencyDB.Entry(tmp).State= EntityState.Modified;
-                        await currencyDB.SaveChangesAsync();
+                        tmp.Sum = totalSum;
+                        currencyDB.Entry(tmp).State = EntityState.Modified;
+                        currencyDB.SaveChanges();
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
         }
 
         //метод для зміни паролю для акаунту
-        public static async Task UpdatePasswordAsync(string emailUser, string newPassword)
+        public static void UpdatePassword(string emailUser, string newPassword)
         {
             try
             {
@@ -169,7 +170,7 @@ namespace Crypto
                     {
                         tmp.Password = newPassword;
                         currencyDB.Entry(tmp).State = EntityState.Modified;
-                        await currencyDB.SaveChangesAsync();
+                        currencyDB.SaveChanges();
                     }
                 }
             }

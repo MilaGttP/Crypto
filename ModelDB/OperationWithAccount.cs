@@ -8,15 +8,15 @@ namespace Crypto
 {
     public class OperationWithAccount 
     {
-        public async Task RegistrationAsync(string? name, string? surname, string? email, string? password)
+        public void Registration(string? name, string? surname, string? email, string? password)
         {
-            Accounts account = new Accounts(name,surname,email, password);
-            await SaveLoadfromDB.AddAccountDBAsync(account);
+            Accounts account = new Accounts(name, surname, email, password);
+            SaveLoadfromDB.AddAccountDB(account);
         }
 
-        public async Task<Accounts> SignInAsync(string email)
+        public Accounts SignIn(string email)
         {
-            return await SaveLoadfromDB.GetAccountAsync(email);
+            return SaveLoadfromDB.GetAccount(email);
         }
     }
 }
