@@ -17,8 +17,9 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        
+
         <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Back" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80">
+            <!--Click="Back_Click"-->
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -60,8 +61,22 @@
         </StackPanel>
 
         <TextBlock Text="Your history" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
-        <StackPanel x:Name="History" Grid.Column="1" Grid.Row="2" Background="#27378C" Orientation="Vertical">
-        </StackPanel>
+        <DataGrid x:Name="GridHistory" Grid.Column="1" Grid.Row="2" Background="#27378C">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Data" Width="80" Binding="{Binding histData}"/>
+                <DataGridTextColumn Header="Name" Width="200" Binding="{Binding histName}"/>
+                <DataGridTextColumn Header="Type" Width="150" Binding="{Binding histType}"/>
+                <DataGridTextColumn Header="Price" Width="200" Binding="{Binding histPrice}"/>
+                <DataGridTextColumn Header="Amount" Width="180" Binding="{Binding histAmount}"/>
+                <DataGridTextColumn Header="Profit" Width="200" Binding="{Binding histProfit}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
                 <TextBlock Text="Wallet" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
         <StackPanel x:Name="Wallet" Grid.Column="2" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical">

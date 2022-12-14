@@ -38,13 +38,11 @@
             <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
             <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
-        <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Center" Background="#586EE4" IsEditable="True" Foreground="Azure">
-            <ComboBoxItem>Btc</ComboBoxItem>
-            <ComboBoxItem>Eth</ComboBoxItem>
-            <ComboBoxItem>Exp</ComboBoxItem>
-        </ComboBox>
+
+        <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Center" Background="#3A4CA9" IsEditable="True" Foreground="Azure"/>
         <TextBlock Text="Coins" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-        <DataGrid Grid.Row="2" Grid.Column="0" Background="#3A4CA9" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals">
+
+        <DataGrid x:Name="GridCoins" Grid.Row="2" Grid.Column="0" Background="#3A4CA9" Grid.RowSpan="2">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
@@ -52,38 +50,14 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="NameC" Width="110">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding NameC}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="TypeC" Width="90">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding TypeC}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="PriceC" Width="100">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding PriceC}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="AmountC" Width="100">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding AmountC}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Id" Width="60" Binding="{Binding coinId}"/>
+                <DataGridTextColumn Header="Icon" Width="90" Binding="{Binding coinIcon}"/>
+                <DataGridTextColumn Header="Name" Width="140" Binding="{Binding coinNameC}"/>
+                <DataGridTextColumn Header="Price" Width="100" Binding="{Binding coinPriceC}"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Text="Trade history" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
-        <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Background="#27378C" Grid.RowSpan="2" MouseLeftButtonDown="ClickDetals" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid x:Name="GridTradeHistory" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Background="#27378C" SelectionChanged="DataGrid_SelectionChanged" Margin="0,20,0,-20">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
@@ -91,48 +65,11 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="Id" Width="50">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Id}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Name" Width="200">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Type" Width="150">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Type}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Price" Width="200">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Price}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Amount" Width="180">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Amount}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Doll" Width="200">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Doll}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Name" Width="200" Binding="{Binding trHisName}"/>
+                <DataGridTextColumn Header="Type" Width="150" Binding="{Binding trHisType}"/>
+                <DataGridTextColumn Header="Price" Width="200" Binding="{Binding trHisPrice}"/>
+                <DataGridTextColumn Header="Amount" Width="180" Binding="{Binding trHisAmount}"/>
+                <DataGridTextColumn Header="Doll" Width="200" Binding="{Binding trHisDoll}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
