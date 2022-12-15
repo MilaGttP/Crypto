@@ -110,7 +110,7 @@ namespace Crypto
         }
 
         //метод для пошуку гаманця користувача в бд
-        public static Notecase GetAccountWallet(int IdUser)
+        public static Notecase GetAccountWallet(int ?IdUser)
         {
             Notecase wallet = new Notecase();
             try
@@ -135,7 +135,7 @@ namespace Crypto
         }
 
         //метод для зміни суми гаманця в БД
-        public static void UpdateWallet(int id, decimal totalSum)
+        public static void UpdateWallet(int? id, decimal ?totalSum)
         {
             try
             {

@@ -14,7 +14,7 @@ namespace Crypto
             this.notecase = new Notecase();
         }
         // метод для поповнення гаманця
-        public void FillUPNotecase(decimal? Sum, ref Notecase notecase)
+        public void FillUPNotecase(decimal Sum, ref Notecase notecase)
         {
             try
             {

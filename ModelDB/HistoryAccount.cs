@@ -9,12 +9,12 @@ namespace Crypto
 {
     public class HistoryAccount
     {
-        public int Id { get; set; }
-        public int Id_account { get; set; }
+        public int? Id { get; set; }
+        public int ?Id_account { get; set; }
         public string ? Id_assets { get; set; }
         public DateTime? Transaction_date { get; set; }
         public decimal ? Total_amount { get; set; }
-        public HistoryAccount(int id_account, string? id_assets, DateTime? transaction_date, decimal? total_amount)
+        public HistoryAccount(int? id_account, string? id_assets, DateTime? transaction_date, decimal? total_amount)
         {
             Id_account = id_account;
             Id_assets = id_assets;
