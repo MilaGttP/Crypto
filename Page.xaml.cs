@@ -35,18 +35,18 @@ namespace Crypto
             hist.histAmount = "";
             hist.histProfit = "";
 
-            GridHistory.Items.Add(hist);
+            //GridHistory.Items.Add(hist);
 
-            History hist1 = new History();
+            //History hist1 = new History();
 
-            hist1.histData = "";
-            hist1.histName = "";
-            hist1.histType = "";
-            hist1.histPrice = "";
-            hist1.histAmount = "";
-            hist1.histProfit = "";
+            //hist1.histData = "";
+            //hist1.histName = "";
+            //hist1.histType = "";
+            //hist1.histPrice = "";
+            //hist1.histAmount = "";
+            //hist1.histProfit = "";
 
-            GridHistory.Items.Add(hist1);
+            //GridHistory.Items.Add(hist1);
         }
 
         private void Back_Click(object sender, MouseButtonEventArgs e)

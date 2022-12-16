@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Crypto"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="1024" d:DesignWidth="1440" Background="#04255E">
     <Grid>
@@ -18,10 +19,8 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <Page>
-            <Hyperlink NavigateUri="UriOfPageToNavigateTo.xaml"/>
-        </Page>
-        <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Back" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80">
+
+        <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Content="Back" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80" Style="{DynamicResource MaterialDesignRaisedButton}">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -35,7 +34,7 @@
         </StackPanel>
 
         <TextBlock Text="Client" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
-        <StackPanel x:Name="Information" Grid.Column="0" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical">
+        <StackPanel x:Name="Information" Grid.Column="0" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical" Margin="10 0 0 0">
             <Label x:Name="nameCl" FontSize="12" Foreground="White" Visibility="Visible">
                 <TextBlock>
                     <Run Text="Name: "/>
@@ -63,7 +62,10 @@
         </StackPanel>
 
         <TextBlock Text="Your history" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
-        <DataGrid x:Name="GridHistory" Grid.Column="1" Grid.Row="2" Background="#27378C">
+        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="1" Margin="20 0 20 0">
+            <TextBlock FontSize="12" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
+        </materialDesign:Card>
+        <!--<DataGrid x:Name="GridHistory" Grid.Column="1" Grid.Row="2" Background="#27378C">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
@@ -78,10 +80,10 @@
                 <DataGridTextColumn Header="Amount" Width="180" Binding="{Binding histAmount}"/>
                 <DataGridTextColumn Header="Profit" Width="200" Binding="{Binding histProfit}"/>
             </DataGrid.Columns>
-        </DataGrid>
+        </DataGrid>-->
 
                 <TextBlock Text="Wallet" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
-        <StackPanel x:Name="Wallet" Grid.Column="2" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical">
+        <StackPanel x:Name="Wallet" Grid.Column="2" Grid.Row="2" Background="#3A4CA9" Orientation="Vertical" Margin="0 0 10 0">
             <Label x:Name="summ" FontSize="12" Foreground="White" Visibility="Visible">
                 <TextBlock>
                     <Run Text="Summ: "/>
