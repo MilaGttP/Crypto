@@ -8,13 +8,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <None Remove="Logo\BTC.jpg" />
+    <None Remove="Logo\Counter.png" />
+    <None Remove="Logo\Counterparty.png" />
+    <None Remove="Logo\Dragonchain.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="2.0.9" />
     <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Logo\Counterparty.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Logo\Counter.png" />
   </ItemGroup>
 
 </Project>

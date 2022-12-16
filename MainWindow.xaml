@@ -3,10 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Crypto"
+        xmlns:local="clr-namespace:Crypto" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="1024" Width="1440" Background="#04255E">
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.6*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="2" Foreground="White" Content="Input" Height="25" FontSize="12" FontWeight="SemiBold" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+
+        <Button Grid.Row="0" Grid.Column="3" Foreground="White" Content="Registration" Height="25" FontSize="12" FontWeight="SemiBold" Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
+            <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
+        </StackPanel>
+
+        <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Center" Background="#3A4CA9" IsEditable="True" Foreground="Azure"/>
+        <TextBlock Text="Coins" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
+
+        <DataGrid x:Name="GridCoins" Grid.Row="2" Grid.Column="0" Background="#3A4CA9" Grid.RowSpan="3" Margin="10 0 0 0">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="60" Binding="{Binding coinId}"/>
+                <DataGridTextColumn Width="90" Binding="{Binding coinIcon}"/>
+                <DataGridTextColumn Width="140" Binding="{Binding coinNameC}"/>
+                <DataGridTextColumn Width="100" Binding="{Binding coinPriceC}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Text="Trade history" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
+            <TextBlock FontSize="12" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
+        </materialDesign:Card>
+        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
+            <TextBlock FontSize="12" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
+        </materialDesign:Card>
+        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
+            <TextBlock FontSize="12" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
+        </materialDesign:Card>
+        <!--<DataGrid x:Name="GridTradeHistory" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Background="#27378C" SelectionChanged="DataGrid_SelectionChanged" Grid.RowSpan="2">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+            </DataGrid.Resources>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Width="200" Binding="{Binding trHisName}"/>
+                <DataGridTextColumn Header="Type" Width="150" Binding="{Binding trHisType}"/>
+                <DataGridTextColumn Header="Price" Width="200" Binding="{Binding trHisPrice}"/>
+                <DataGridTextColumn Header="Amount" Width="180" Binding="{Binding trHisAmount}"/>
+                <DataGridTextColumn Header="Doll" Width="200" Binding="{Binding trHisDoll}"/>
+            </DataGrid.Columns>
+        </DataGrid>-->
     </Grid>
 </Window>
