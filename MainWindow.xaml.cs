@@ -50,17 +50,17 @@ namespace Crypto
             trHis.trHisAmount = "";
             trHis.trHisDoll = "";
 
-            GridTradeHistory.Items.Add(trHis);
+            //GridTradeHistory.Items.Add(trHis);
 
-            TradeHistory trHis1 = new TradeHistory();
+            //TradeHistory trHis1 = new TradeHistory();
 
-            trHis1.trHisName = "";
-            trHis1.trHisType = "";
-            trHis1.trHisPrice = "";
-            trHis1.trHisAmount = "";
-            trHis1.trHisDoll = "";
+            //trHis1.trHisName = "";
+            //trHis1.trHisType = "";
+            //trHis1.trHisPrice = "";
+            //trHis1.trHisAmount = "";
+            //trHis1.trHisDoll = "";
 
-            GridTradeHistory.Items.Add(trHis1);
+            //GridTradeHistory.Items.Add(trHis1);
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

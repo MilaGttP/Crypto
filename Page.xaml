@@ -18,8 +18,10 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
+        <Page>
+            <Hyperlink NavigateUri="UriOfPageToNavigateTo.xaml"/>
+        </Page>
         <Button Grid.Row="0" Grid.Column="3" BorderBrush="White" Foreground="White" Background="Transparent" Content="Back" Height="25" FontSize="12" FontWeight="ExtraBold" Width="80">
-            <!--Click="Back_Click"-->
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="5"/>

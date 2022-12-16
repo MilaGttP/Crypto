@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Logo\BTC.jpg" />
+    <None Remove="Logo\Counter.png" />
     <None Remove="Logo\Counterparty.png" />
     <None Remove="Logo\Dragonchain.png" />
   </ItemGroup>
@@ -20,6 +21,10 @@
 
   <ItemGroup>
     <Resource Include="Logo\Counterparty.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Logo\Counter.png" />
   </ItemGroup>
 
 </Project>
