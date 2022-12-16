@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+
     <None Remove="Logo\BTC.jpg" />
     <None Remove="Logo\Counter.png" />
     <None Remove="Logo\Counterparty.png" />
@@ -20,6 +21,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="RestSharp" Version="108.0.3" />
   </ItemGroup>
