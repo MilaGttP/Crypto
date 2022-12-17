@@ -41,7 +41,7 @@
         <ContentControl x:Name="ConContol" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3"/>
 
         <DataGrid x:Name="GridCoins" Grid.Row="1" AutoGenerateColumns="False"  Grid.Column="0" Background="#3A4CA9" 
-                  Grid.RowSpan="3" Margin="10 0 0 0" Foreground="#f2f2f2" IsReadOnly="True">
+                  Grid.RowSpan="3" Margin="10 0 0 0" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
@@ -50,11 +50,19 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn />
+                <DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding iconUrl}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Binding="{Binding name}"/>
-                <DataGridTextColumn Binding="{Binding price_usd}"/>
+                <DataGridTextColumn Binding="{Binding price}"/>
+                <DataGridTextColumn>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-
         <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
             <TextBlock/>
         </materialDesign:Card>

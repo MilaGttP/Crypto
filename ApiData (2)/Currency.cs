@@ -4,8 +4,7 @@ public class Currency
 {
     public string asset_id { get; set; }
     public string name { get; set; }
-    public bool type_is_crypto { get; set; }
-
+    public int type_is_crypto { get; set; }
     public DateTime? data_start { get; set; }
     public DateTime? data_end { get; set; }
     public DateTime? data_quote_start { get; set; }
