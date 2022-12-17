@@ -12,7 +12,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.6*"/>
             <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition Width="0.16*"/>
             <ColumnDefinition Width="0.2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -23,12 +23,12 @@
         </Grid.RowDefinitions>
 
         <Button x:Name="RegBtn" Grid.Row="0" Grid.Column="2" Foreground="White" Content="Sign" Height="32" FontSize="14" FontWeight="SemiBold" 
-                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand"/>
 
         <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Registration" Height="32" FontSize="14" FontWeight="SemiBold"
                 Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand"/>
 
-        <Button x:Name="AccBtn" Grid.Row="0" Grid.Column="3" Content="Account" Foreground="White" Height="32" FontSize="14" FontWeight="SemiBold" Visibility="Hidden"
+        <Button x:Name="AccBtn" Visibility="Hidden" Grid.Row="0" Grid.Column="2" Content="Account" Foreground="White" Height="32" FontSize="14" FontWeight="SemiBold" Grid.ColumnSpan="2"
                 Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand"/>
 
         <StackPanel Orientation="Horizontal">
