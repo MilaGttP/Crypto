@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Crypto
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainItems mainItems { get; set; }
@@ -35,14 +32,6 @@ namespace Crypto
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void ClickDetals(object sender, MouseButtonEventArgs e)
-        {
-            NavigationWindow win = new NavigationWindow();
-            win.Content = new Page();
-            win.Show();
-            this.Close();
         }
     }
 }
