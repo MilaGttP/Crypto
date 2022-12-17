@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Crypto
 {
-    public class MaineItems
+    public class MainItems
     {
         public OperationWithAccount OperationWithAccount { get; set; }
         public OperationWithNotecase OperationWithNotecase { get; set; }
 
         public List<Currency> currencies { get; set; }
         public List<Icon> icons { get; set; }
-        public MaineItems()
+        public MainItems()
         {
             try
             {

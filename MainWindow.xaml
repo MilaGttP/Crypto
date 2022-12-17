@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Crypto" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1440" Background="#04255E">
+        Title="MainWindow" Height="1024" Width="1440" Background="#04255E" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -35,7 +35,10 @@
         <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Center" Background="#3A4CA9" IsEditable="True" Foreground="Azure"/>
         <TextBlock Text="Coins" Foreground="White" FontSize="12" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
 
-        <DataGrid x:Name="GridCoins" Grid.Row="2" Grid.Column="0" Background="#3A4CA9" Grid.RowSpan="3" Margin="10 0 0 0">
+        <ContentControl x:Name="ConContol" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3"/>
+
+        <DataGrid x:Name="GridCoins" Grid.Row="2" AutoGenerateColumns="False"  Grid.Column="0" Background="#3A4CA9" 
+                  Grid.RowSpan="3" Margin="10 0 0 0" Foreground="#f2f2f2" IsReadOnly="True">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
@@ -43,10 +46,9 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="60" Binding="{Binding coinId}"/>
-                <DataGridTextColumn Width="90" Binding="{Binding coinIcon}"/>
-                <DataGridTextColumn Width="140" Binding="{Binding coinNameC}"/>
-                <DataGridTextColumn Width="100" Binding="{Binding coinPriceC}"/>
+                <DataGridTextColumn />
+                <DataGridTextColumn Binding="{Binding name}"/>
+                <DataGridTextColumn Binding="{Binding price_usd}"/>
             </DataGrid.Columns>
         </DataGrid>
 

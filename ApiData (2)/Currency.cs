@@ -2,8 +2,6 @@
 
 public class Currency
 {
-
-
     public string asset_id { get; set; }
     public string name { get; set; }
     public bool type_is_crypto { get; set; }
