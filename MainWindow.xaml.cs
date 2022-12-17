@@ -76,6 +76,12 @@ namespace Crypto
             this.Close();
         }
 
+        private void RegistrForm_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new RegistrForm();
+            form.Show();
+        }
+
         public class Coins
         {
             public string coinId { get; set; }

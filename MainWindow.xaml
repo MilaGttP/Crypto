@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Crypto" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1024" Width="1440" Background="#04255E">
+        Title="MainWindow" Height="1024" Width="1440" Background="#04255E" WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -25,7 +25,7 @@
 
         <Button Grid.Row="0" Grid.Column="2" Foreground="White" Content="Input" Height="25" FontSize="12" FontWeight="SemiBold" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
 
-        <Button Grid.Row="0" Grid.Column="3" Foreground="White" Content="Registration" Height="25" FontSize="12" FontWeight="SemiBold" Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+        <Button Grid.Row="0" Grid.Column="3" Foreground="White" Content="Registration" Height="25" FontSize="12" FontWeight="SemiBold" Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Click="RegistrForm_Click"/>
 
         <StackPanel Orientation="Horizontal">
             <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
@@ -43,7 +43,6 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="60" Binding="{Binding coinId}"/>
                 <DataGridTextColumn Width="90" Binding="{Binding coinIcon}"/>
                 <DataGridTextColumn Width="140" Binding="{Binding coinNameC}"/>
                 <DataGridTextColumn Width="100" Binding="{Binding coinPriceC}"/>
