@@ -22,14 +22,14 @@
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="RegBtn" Grid.Row="0" Grid.Column="2" Foreground="White" Content="Sign" Height="32" FontSize="14" FontWeight="SemiBold" 
-                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand"/>
+        <Button x:Name="RegBtn" Grid.Row="0" Grid.Column="2" Foreground="White" Content="SigIn" Height="32" FontSize="14" FontWeight="SemiBold" 
+                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand" CommandParameter="SigIn"/>
 
         <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Registration" Height="32" FontSize="14" FontWeight="SemiBold"
-                Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand"/>
+                Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand" CommandParameter="Registration"/>
 
         <Button x:Name="AccBtn" Visibility="Hidden" Grid.Row="0" Grid.Column="2" Content="Account" Foreground="White" Height="32" FontSize="14" FontWeight="SemiBold" Grid.ColumnSpan="2"
-                Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand"/>
+                Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Cursor="Hand" CommandParameter="Account"/>
 
         <StackPanel Orientation="Horizontal">
             <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
@@ -38,10 +38,10 @@
 
         <ComboBox Grid.Column="1" Width="300" HorizontalAlignment="Right" Background="#1a237e" IsEditable="True" Foreground="White"/>
 
-        <ContentControl x:Name="ConContol" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3"/>
+        <ContentControl x:Name="ConContol" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
 
         <DataGrid x:Name="GridCoins" Grid.Row="1" AutoGenerateColumns="False"  Grid.Column="0" Background="#3A4CA9" 
-                  Grid.RowSpan="3" Margin="10 0 0 0" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None">
+                  Grid.RowSpan="3" Margin="10 0 0 0" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None" SelectedItem="{Binding SetIconsCurrencies, Mode=TwoWay}">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
@@ -53,18 +53,22 @@
                 <DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Image Source="{Binding iconUrl}" />
+                            <Image Source="{Binding iconUrl, Mode=TwoWay}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Binding="{Binding name}"/>
-                <DataGridTextColumn Binding="{Binding price}"/>
+                <DataGridTextColumn Binding="{Binding name,Mode=TwoWay}"/>
+                <DataGridTextColumn Binding="{Binding price,Mode=TwoWay}"/>
                 <DataGridTextColumn>
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
-            <TextBlock/>
+            <DataGrid x:Name="dgBord1" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding rate,Mode=TwoWay}"/>
+                </DataGrid.Columns>
+                </DataGrid>
         </materialDesign:Card>
         <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
             <TextBlock/>
@@ -72,6 +76,5 @@
         <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Margin="20 0 20 10">
             <TextBlock/>
         </materialDesign:Card>
-
     </Grid>
 </Window>

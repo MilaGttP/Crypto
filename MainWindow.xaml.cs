@@ -17,22 +17,13 @@ namespace Crypto
 {
     public partial class MainWindow : Window
     {
-        public MainItems mainItems { get; set; }
-        public Currency currency { get; set; }
-        public Icon icons { get; set; }
+        private MainViewModel mainViewModel;
         public MainWindow()
         {
             InitializeComponent();
-            currency = new Currency();
-            icons= new Icon();
-            mainItems = new MainItems();
-            ConContol.Content = mainItems.setCurrencyAndIcon;
-            GridCoins.ItemsSource = mainItems.setCurrencyAndIcons;
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            mainViewModel= new MainViewModel();
+            ConContol.Content = mainViewModel;
+            GridCoins.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
         }
     }
 }
