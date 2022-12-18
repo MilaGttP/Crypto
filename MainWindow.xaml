@@ -23,7 +23,7 @@
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="2" Foreground="White" Content="Input" Height="25" FontSize="12" FontWeight="SemiBold" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+        <Button Grid.Row="0" Grid.Column="2" Foreground="White" Content="Input" Height="25" FontSize="12" FontWeight="SemiBold" Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Click="InputForm_Click"/>
 
         <Button Grid.Row="0" Grid.Column="3" Foreground="White" Content="Registration" Height="25" FontSize="12" FontWeight="SemiBold" Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Click="RegistrForm_Click"/>
 

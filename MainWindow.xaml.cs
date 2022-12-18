@@ -76,6 +76,12 @@ namespace Crypto
             this.Close();
         }
 
+        private void InputForm_Click(object sender, RoutedEventArgs e)
+        {
+            var inform = new InputForm();
+            inform.Show();
+        }
+
         private void RegistrForm_Click(object sender, RoutedEventArgs e)
         {
             var form = new RegistrForm();
