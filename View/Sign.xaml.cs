@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Crypto
 {
-    /// <summary>
-    /// Логика взаимодействия для Sign.xaml
-    /// </summary>
     public partial class Sign : UserControl
     {
         public Sign()
