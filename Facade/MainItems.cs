@@ -35,7 +35,5 @@ namespace Crypto
                 Console.WriteLine(ex.Message.ToString());
             }
         }
-
-       
     }
 }

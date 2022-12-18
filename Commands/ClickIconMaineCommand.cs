@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Crypto
     {
         public event EventHandler? CanExecuteChanged;
 
-        private MainViewModel viewModel;
+        private MainViewModel viewModel { get; set; }
         public ClickIconMaineCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
@@ -24,7 +25,8 @@ namespace Crypto
 
         public void Execute(object? parameter)
         {
-            
+            viewModel.Exchange = AdapterDataAPi.Get_all_exchangerate(viewModel.SetIconsCurrencies.name);
+            viewModel.Url = viewModel.MainItem.setCurrencyAndIcons.Find(i => i.name == viewModel.SetIconsCurrencies.name).iconUrl;
         }
     }
 }

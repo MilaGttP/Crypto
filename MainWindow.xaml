@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Crypto" 
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
         mc:Ignorable="d"
         Title="Crypto" Height="1024" Width="1440" Background="#04255E" WindowStartupLocation="CenterScreen">
 
@@ -21,6 +21,7 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
+            
         </Grid.RowDefinitions>
 
         <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="SigIn" Height="32" FontSize="14" FontWeight="SemiBold" Click="SignBtn_Click"
@@ -29,6 +30,8 @@
         <Button x:Name="RegBtn" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Registration" Height="32" FontSize="14" FontWeight="SemiBold" Click="RegBtn_Click"
                 Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" CommandParameter="Registration"/>
 
+        <Button x:Name="Search" Grid.Row="0" Grid.Column="1" Foreground="White" Content="Searching" Height="32" FontSize="14" FontWeight="SemiBold" Command="{Binding SelectedCurrencyCommand,Mode=TwoWay}"
+                Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"/>
         <ComboBox Grid.Column="2" Width="300" HorizontalAlignment="Right" Background="#1a237e" IsEditable="True" Foreground="White"/>
 
         <StackPanel Orientation="Horizontal">
@@ -44,7 +47,7 @@
                     <Setter Property="FontSize" Value="12"/>
                 </Style>
             </DataGrid.Resources>
-            <DataGrid.Columns>
+            <DataGrid.Columns >
                 <DataGridTextColumn />
                 <DataGridTemplateColumn Width="SizeToCells" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
@@ -59,24 +62,25 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="1" Grid.Column="1" Margin="20 0 15 20">
-            <DataGrid x:Name="rates" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding rate,Mode=TwoWay}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+        <materialDesign:Card Background="#27378C"  FontSize="12" Grid.Row="1" Grid.Column="1" Margin="20 0 15 20">
+            <StackPanel Width="300" Height="200">
+                <Image Source="{Binding Bitmap,Mode=TwoWay}" Stretch="Fill"/>
+            </StackPanel>
         </materialDesign:Card>
         
         <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Margin="10 0 25 20">
-            <DataGrid x:Name="dgBord1" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding rate,Mode=TwoWay}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+            
         </materialDesign:Card>
         
         <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
-            <TextBlock/>
+            <DataGrid x:Name="dgBord1" GridLinesVisibility="None" AutoGenerateColumns="False" ItemsSource="{Binding Exchange.rates,Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding asset_id_base,Mode=TwoWay}"/>
+                    <DataGridTextColumn Binding="{Binding asset_id_quote,Mode=TwoWay}"/>
+                    <DataGridTextColumn Binding="{Binding rate,Mode=TwoWay,StringFormat={}{0:F3}}"/>
+                    <DataGridTextColumn Binding="{Binding time,Mode=TwoWay}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </materialDesign:Card>
         
     </Grid>
