@@ -34,4 +34,8 @@
     <SplashScreen Include="Logo\Counter.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
+
 </Project>
