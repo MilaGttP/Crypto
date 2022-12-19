@@ -14,20 +14,6 @@ namespace Crypto
         private MainItems mainItems { get; set; }
         private SetCurrencyAndIcon setIconsCurrency { get; set; }
         private ExchangeCurrentrate exchangeCurrentrate { get; set; }
-
-        private Aspose.Imaging.Image bitmapImage { get; set; }
-        public Aspose.Imaging.Image Image
-        {
-            get
-            {
-                return bitmapImage;
-            }
-            set
-            {
-                bitmapImage= value;
-                OnPropertyChanged(nameof(bitmapImage)); 
-            }
-        }
         private string url { get; set; }
         public string Url
         {

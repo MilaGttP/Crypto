@@ -6,9 +6,6 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Aspose;
-using Aspose.Imaging;
-using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.Resources;
 
 namespace Crypto
 {
