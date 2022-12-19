@@ -17,12 +17,17 @@ namespace Crypto
 {
     public partial class MainWindow : Window
     {
-        private MainViewModel mainViewModel;
+        public MainViewModel mainViewModel;
         public MainWindow()
         {
             InitializeComponent();
+            
             mainViewModel = new MainViewModel();
+            DataContext = mainViewModel;
             GridCoins.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
+            mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
+            dgBord1.ItemsSource = mainViewModel.Exchange.rates;
+            mainViewModel.Url = AdapterDataAPi.Get_icon_list(200).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
         }
         public void Navigate(UserControl nextPage) => this.Content = nextPage;
