@@ -30,15 +30,7 @@ namespace Crypto
         public void Execute(object? parameter)
         {
             viewModel.Exchange = AdapterDataAPi.Get_all_exchangerate(viewModel.SetIconsCurrencies.name);
-            var tmp = viewModel.MainItem.setCurrencyAndIcons.Find(i => i.name == viewModel.SetIconsCurrencies.name).iconUrl;
-            using (Image im = Image.Load(Resources.ResourceManager.GetObject(tmp));
-            {
-                
-                im.Resize(200,200);
-                viewModel.Image = im;
-            }
-            //viewModel.Url = viewModel.MainItem.setCurrencyAndIcons.Find(i => i.name == viewModel.SetIconsCurrencies.name).iconUrl;
-
+            viewModel.Url = viewModel.MainItem.setCurrencyAndIcons.Find(i => i.name == viewModel.SetIconsCurrencies.name).iconUrl;
         }
     }
 }
