@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Crypto
 {
@@ -15,20 +14,21 @@ namespace Crypto
         private MainItems mainItems { get; set; }
         private SetCurrencyAndIcon setIconsCurrency { get; set; }
         private ExchangeCurrentrate exchangeCurrentrate { get; set; }
-        private string url { get; set; }
-        private BitmapImage bitmap { get; set; }
 
-        public BitmapImage Bitmap
+        private Aspose.Imaging.Image bitmapImage { get; set; }
+        public Aspose.Imaging.Image Image
         {
-            get { return bitmap; }
-
+            get
+            {
+                return bitmapImage;
+            }
             set
             {
-                bitmap = value;
-                bitmap.UriSource = new Uri(url);    
-                OnPropertyChanged(nameof(Bitmap));  
+                bitmapImage= value;
+                OnPropertyChanged(nameof(bitmapImage)); 
             }
         }
+        private string url { get; set; }
         public string Url
         {
             get { return url; }
