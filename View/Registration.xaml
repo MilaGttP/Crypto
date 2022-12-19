@@ -30,7 +30,7 @@
             </StackPanel>
         </Grid>
 
-        <materialDesign:Card Grid.Row="1" Grid.ColumnSpan="2" Background="#3A4CA9" Margin="75 0 75 40" materialDesign:ButtonAssist.CornerRadius="40">
+        <materialDesign:Card Grid.Row="1" Grid.ColumnSpan="2" Background="#303f7e" Margin="75 0 75 40" materialDesign:ButtonAssist.CornerRadius="40">
             <Border>
                 <Grid>
                     <Grid.ColumnDefinitions>
