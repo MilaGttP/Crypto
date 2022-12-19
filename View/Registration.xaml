@@ -9,92 +9,67 @@
              d:DesignHeight="1024" d:DesignWidth="1440" Cursor="">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="34*"/>
-            <ColumnDefinition Width="151*"/>
-            <ColumnDefinition Width="615*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.15*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.25*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="0,0,615,0">
-            <Image Source="/Logo/Counterparty.png" Width="70" Margin="40 0 5 0"/>
-            <TextBlock Text="Crypto" Foreground="White" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0"/>
-        </StackPanel>
+        <Grid>
+            <Button x:Name="BackBtn" Content="← BACK" Background="Transparent" Foreground="White" Height="60" FontSize="18"  FontWeight="SemiBold"
+                     Style="{DynamicResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" Margin="20 0 0 0"/>
+        </Grid>
 
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="16" Grid.Row="1" Margin="40 30 35 30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Grid.Row="1" Grid.Column="2" Background="#3A4CA9" Margin="20 0 30 15">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBox x:Name="NameTB" BorderBrush="#27378C" FontSize="14" CaretBrush="White" Foreground="White" Width="1000" Height="60" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-            </Grid>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" >
+            <StackPanel Orientation="Horizontal" >
+                <Image Source="/Logo/Counterparty.png" Width="70" />
+                <TextBlock Text="Crypto" Foreground="White" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0"/>
+            </StackPanel>
+        </Grid>
+
+        <materialDesign:Card Grid.Row="1" Grid.ColumnSpan="2" Background="#3A4CA9" Margin="75 0 75 40" materialDesign:ButtonAssist.CornerRadius="40">
+            <Border>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Separator Grid.ColumnSpan="3" Grid.Row="1" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="3" Grid.Row="3" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="3" Grid.Row="5" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="3" Grid.Row="7" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+
+                </Grid>
+            </Border>
+           
         </materialDesign:Card>
 
-
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="16" Grid.Row="2" Grid.Column="0" Margin="40 30 35 30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Surname:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="2" Margin="20 0 30 15">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBox x:Name="SurnameTB" BorderBrush="#27378C" FontSize="14" CaretBrush="White" Foreground="White" Width="1000" Height="60" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-            </Grid>
-        </materialDesign:Card>
-
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="16" Grid.Row="3" Grid.Column="0" Margin="40 30 35 30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="E-mail:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="3" Grid.Column="2" Margin="20 0 30 15">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBox x:Name="EmailTB" BorderBrush="#27378C" FontSize="14" CaretBrush="White" Foreground="White" Width="1000" Height="60" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-            </Grid>
-        </materialDesign:Card>
-
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="16" Grid.Row="4" Grid.Column="0" Margin="40 30 35 30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2" >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Password:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="4" Grid.Column="2" Margin="20 0 30 15">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBox x:Name="PassTB" BorderBrush="#27378C" FontSize="14" CaretBrush="White" Foreground="White" Width="1000" Height="60" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-            </Grid>
-        </materialDesign:Card>
-
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="16" Grid.Row="5" Grid.Column="0" Margin="40 30 35 30" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Re-Password:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="5" Grid.Column="2" Margin="20 0 30 15">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBox x:Name="RePassTB" BorderBrush="#27378C" FontSize="14" CaretBrush="White" Foreground="White" Width="1000" Height="60" Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
-            </Grid>
-        </materialDesign:Card>
-
-
-        <Grid Grid.Row="6" Grid.Column="2" >
+        <Grid Grid.Row="6" Grid.ColumnSpan="2" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="BackBtn" Grid.Column="0" Background="#27378C" Foreground="White" Content="←" FontSize="18" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="40,0,40,50" materialDesign:ButtonAssist.CornerRadius="10"/>
-            <Button x:Name="SaveBtn" Grid.Column="1" Background="#27378C" Foreground="White" Content="Save" FontSize="12" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="40,0,40,50"  materialDesign:ButtonAssist.CornerRadius="10"/>
+            <Button x:Name="ClearBtn" Grid.Column="0" Background="Transparent" Foreground="#3A4CA9" Height="60" Content="CLEAR" FontSize="18"  FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="75,0,40,50" materialDesign:ButtonAssist.CornerRadius="15"/>
+            <Button x:Name="SaveBtn" Grid.Column="1" Background="#27378C" Foreground="White" Height="60" Content="SAVE" FontSize="18" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="40,0,75,50"  materialDesign:ButtonAssist.CornerRadius="15"/>
         </Grid>
     </Grid>
 </UserControl>
