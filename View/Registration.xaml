@@ -50,10 +50,31 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Separator Grid.ColumnSpan="3" Grid.Row="1" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
-                    <Separator Grid.ColumnSpan="3" Grid.Row="3" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
-                    <Separator Grid.ColumnSpan="3" Grid.Row="5" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
-                    <Separator Grid.ColumnSpan="3" Grid.Row="7" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="2" Grid.Row="1" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="2" Grid.Row="3" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="2" Grid.Row="5" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    <Separator Grid.ColumnSpan="2" Grid.Row="7" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+
+                    <TextBlock Text="Name:" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+                    <TextBlock Grid.Row="2" Text="Surname:" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+                    <TextBlock Grid.Row="4" Text="E - mail:" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+                    <TextBlock Grid.Row="6" Text="Password:" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+                    <TextBlock Grid.Row="8" Text="Re - password:" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+
+                    <TextBox x:Name="NameTB" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
+
+                    <TextBox x:Name="SurnameTB" Grid.Row="2" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
+
+                    <TextBox x:Name="EmailTB" Grid.Row="4" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
+
+                    <TextBox x:Name="PassTB" Grid.Row="6" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
+
+                    <TextBox x:Name="RepassTB" Grid.Row="8" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
 
                 </Grid>
             </Border>

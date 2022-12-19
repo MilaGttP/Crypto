@@ -6,45 +6,71 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:Crypto"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" >
+             d:DesignHeight="1024" d:DesignWidth="1440" Cursor="">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="34*"/>
-            <ColumnDefinition Width="151*"/>
-            <ColumnDefinition Width="615*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.25*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="0,0,615,0">
-            <Image Source="/Logo/Counterparty.png" Width="55" Margin="10 0 0 0"/>
-            <TextBlock Text="Crypto" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0"/>
-        </StackPanel>
+        <Grid>
+            <Button x:Name="BackBtn" Content="← BACK" Background="Transparent" Foreground="White" Height="60" FontSize="18"  FontWeight="SemiBold"
+                     Style="{DynamicResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" Margin="20 0 0 0"/>
+        </Grid>
 
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 20 10" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="E-mail:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="1" Grid.Column="2" Margin="20,0,20,10">
-            <TextBlock FontSize="12" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" >
+            <StackPanel Orientation="Horizontal" >
+                <Image Source="/Logo/Counterparty.png" Width="70" />
+                <TextBlock Text="Crypto" Foreground="White" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0"/>
+            </StackPanel>
+        </Grid>
+
+        <materialDesign:Card Grid.Row="1" Grid.ColumnSpan="2" Background="#3A4CA9" Margin="75 100 75 100" materialDesign:ButtonAssist.CornerRadius="40">
+            <Border>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition/>
+                        
+                    </Grid.RowDefinitions>
+
+                    <Separator Grid.ColumnSpan="2" Grid.Row="1" Height="20" Background="#27378C" Foreground="#27378C" Margin="25 0 25 0"/>
+                    
+                    <TextBlock Text="E - mail:" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+                    <TextBlock Grid.Row="2" Text="Password:" Foreground="White" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
+
+                    <TextBox x:Name="EmailTB" Grid.Column="1" Foreground="White" FontSize="30" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
+
+                    <TextBox x:Name="PassTB" Grid.Row="2" Grid.Column="1" Foreground="White" FontSize="30" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignTextBox}"/>
+
+                </Grid>
+            </Border>
+
         </materialDesign:Card>
 
-        <DataGrid Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 20 10" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Password:" Width="200"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <materialDesign:Card Background="#3A4CA9" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="2" Margin="20,0,20,10">
-            <TextBlock FontSize="12" Style="{DynamicResource MaterialDesignHeadline6TextBlock}">My First Material Design App</TextBlock>
-        </materialDesign:Card>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="2" Grid.Column="2" Margin="0,57,0,0" Grid.RowSpan="2">
-            <Button Foreground="White" Content="Save" FontSize="12" FontWeight="SemiBold" Width="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="180,43,344,100"/>
+            <Button x:Name="ClearBtn" Grid.Column="0" Background="Transparent" Foreground="#3A4CA9" Height="60" Content="CLEAR" FontSize="18"  FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="75,0,40,80" materialDesign:ButtonAssist.CornerRadius="15"/>
+            <Button x:Name="SaveBtn" Grid.Column="1" Background="#27378C" Foreground="White" Height="60" Content="SAVE" FontSize="18" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="40,0,75,80"  materialDesign:ButtonAssist.CornerRadius="15"/>
         </Grid>
     </Grid>
 </UserControl>
