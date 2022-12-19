@@ -17,7 +17,7 @@ namespace Crypto
 
         public ApiRestClient(bool sandbox = true)
         {
-            this.apikey = "BF221201-766D-4A57-8853-E5083DF93D2C";           
+            this.apikey = "BF221201-766D-4A57-8853-E5083DF93D2C";
             if (sandbox)
             {
                 WebUrl = "https://rest-sandbox.coinapi.io";
@@ -100,7 +100,6 @@ namespace Crypto
             {
                 var request = new RestRequest(ApiEndpointUrls.Assests_Icons(iconSize));
                 request.AddHeader("X-CoinAPI-Key", "BF221201-766D-4A57-8853-E5083DF93D2C");
-
                 RestResponse response = client.Execute(request);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
