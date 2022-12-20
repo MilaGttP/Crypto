@@ -20,7 +20,7 @@
 
         <Grid>
             <Button x:Name="BackBtn" Content="← BACK" Background="Transparent" Foreground="White" Height="60" FontSize="18"  FontWeight="SemiBold"
-                     Style="{DynamicResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" Margin="20 0 0 0"/>
+                     Style="{DynamicResource MaterialDesignFlatButton}" materialDesign:ButtonAssist.CornerRadius="15" Margin="20 0 0 0" Click="BackBtn_Click"/>
         </Grid>
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" >
@@ -30,7 +30,7 @@
             </StackPanel>
         </Grid>
 
-        <materialDesign:Card Grid.Row="1" Grid.ColumnSpan="2" Background="#303f7e" Margin="75 100 75 100" materialDesign:ButtonAssist.CornerRadius="40">
+        <materialDesign:Card Grid.Row="1" Grid.ColumnSpan="2" Background="#27378C" Opacity="0.9" Margin="75 100 75 100" materialDesign:ButtonAssist.CornerRadius="40">
             <Border>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -68,9 +68,9 @@
             </Grid.ColumnDefinitions>
 
             <Button x:Name="ClearBtn" Grid.Column="0" Background="Transparent" Foreground="#3A4CA9" Height="60" Content="CLEAR" FontSize="18"  FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="75,0,40,80" materialDesign:ButtonAssist.CornerRadius="15"/>
-            <Button x:Name="SaveBtn" Grid.Column="1" Background="#27378C" Foreground="White" Height="60" Content="SAVE" FontSize="18" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
-                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="40,0,75,80"  materialDesign:ButtonAssist.CornerRadius="15"/>
+                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="75,0,40,80" materialDesign:ButtonAssist.CornerRadius="15" Click="ClearBtn_Click"/>
+            <Button x:Name="SaveBtn" Grid.Column="1" Background="#3A4CA9" Foreground="White" Height="60" Content="SAVE" FontSize="18" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                    Style="{DynamicResource MaterialDesignFlatButton}" Margin="40,0,75,80"  materialDesign:ButtonAssist.CornerRadius="15" Click="SaveBtn_Click"/>
         </Grid>
     </Grid>
 </UserControl>

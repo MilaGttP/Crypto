@@ -21,5 +21,22 @@ namespace Crypto
         {
             InitializeComponent();
         }
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Window main = new MainWindow();
+            Window.GetWindow(this).Close();
+            main.ShowDialog();
+        }
+
+        private void ClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            EmailTB.Text = string.Empty;
+            PassTB.Text = string.Empty;
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

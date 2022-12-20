@@ -41,7 +41,7 @@
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="FontSize" Value="16"/>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns >
@@ -68,7 +68,7 @@
             
         </materialDesign:Card>
         
-        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="12" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
+        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="14" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
             <DataGrid x:Name="dgBord1" GridLinesVisibility="None" AutoGenerateColumns="False" ItemsSource="{Binding Exchange.rates,Mode=TwoWay}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding asset_id_base,Mode=TwoWay}"/>
