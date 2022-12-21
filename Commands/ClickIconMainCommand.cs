@@ -9,12 +9,12 @@ using System.Windows.Input;
 
 namespace Crypto
 {
-    public class ClickIconMaineCommand : ICommand
+    public class ClickIconMainCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
 
         private MainViewModel viewModel { get; set; }
-        public ClickIconMaineCommand(MainViewModel viewModel)
+        public ClickIconMainCommand(MainViewModel viewModel)
         {
             this.viewModel = viewModel;
         }

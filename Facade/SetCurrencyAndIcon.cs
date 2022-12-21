@@ -43,5 +43,12 @@ namespace Crypto
             }
             return currencyList;
         }
+
+        public List<SetCurrencyAndIcon> FilterCurrencyList (List<Currency> currencies, List<Icon> icons, string nameToSearch)
+        {
+            List<SetCurrencyAndIcon> currencyList = GetSetIconCurrency(currencies, icons);
+            List<SetCurrencyAndIcon> filtered = currencyList.Where(source => source.name.StartsWith(nameToSearch.ToUpper())).ToList<SetCurrencyAndIcon>();
+            return filtered;
+        }
     }
 }

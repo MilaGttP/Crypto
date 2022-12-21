@@ -24,9 +24,9 @@ namespace Crypto
             
             mainViewModel = new MainViewModel();
             DataContext = mainViewModel;
-            GridCoins.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
+            CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
             mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
-            dgBord1.ItemsSource = mainViewModel.Exchange.rates;
+            RatesDG.ItemsSource = mainViewModel.Exchange.rates;
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
         }
@@ -47,6 +47,13 @@ namespace Crypto
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
             Switcher.Switch(new Registration());
+        }
+
+        private void SearchTB_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var filtered = mainViewModel.MainItem.setCurrencyAndIcon.
+                FilterCurrencyList(mainViewModel.MainItem.currencies, mainViewModel.MainItem.icons, SearchTB.Text);
+            CoinsDG.ItemsSource = filtered;
         }
     }
 }

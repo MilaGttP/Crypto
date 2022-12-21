@@ -12,7 +12,6 @@ namespace Crypto
         public List<Currency> currencies { get; set; }
         public List<Icon> icons { get; set; }
         public List<SetCurrencyAndIcon> setCurrencyAndIcons { get; set; }
-
         public SetCurrencyAndIcon setCurrencyAndIcon { get; set; }
 
         public MainItems()

@@ -71,7 +71,7 @@ namespace Crypto
         {
             mainItems = new MainItems();
             UpDateViewCommand = new UpDateViewCommand(this);
-            SelectedCurrencyCommand = new ClickIconMaineCommand(this);
+            SelectedCurrencyCommand = new ClickIconMainCommand(this);
         }
     }
 }
