@@ -50,7 +50,6 @@ namespace Crypto
             //if (mainViewModel.Accounts.Name != null && mainViewModel.Accounts.Surname != null)
             //{
             //    HelloTB.Text = "Hello, Dear";
-            //    GreetTB.Text = $"{mainViewModel.Accounts.Name} {mainViewModel.Accounts.Surname}!";
             //}
         }
         public void Navigate(UserControl nextPage) => this.Content = nextPage;

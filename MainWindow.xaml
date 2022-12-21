@@ -32,7 +32,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="30" Foreground="White" FontSize="18" Text="Hello, Dear"/>
+            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="30" Foreground="White" FontSize="18"/>
             <TextBlock Grid.Row="1" x:Name="GreetTB" TextAlignment="Center" Padding="10" Foreground="White" FontSize="18" Text="{Binding Accounts.Name, Mode=OneWayToSource}" />
 
         </Grid>
@@ -86,7 +86,7 @@
         <materialDesign:Card Background="#27378C" FontSize="20" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
             <Grid>
                 <Label Content="Currency rates between base assets other coins" Foreground="White" FontSize="24" Padding="20"/>
-                <DataGrid x:Name="RatesDG" Foreground="#DEDEDE" Margin="0 20 0 0"  Padding="15" GridLinesVisibility="None" FontSize="14" AutoGenerateColumns="False" ItemsSource="{Binding Exchange.rates,Mode=TwoWay}">
+                <DataGrid x:Name="RatesDG" Foreground="#DEDEDE" Margin="0 20 0 0"  Padding="20" GridLinesVisibility="None" FontSize="14" AutoGenerateColumns="False" ItemsSource="{Binding Exchange.rates,Mode=TwoWay}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding asset_id_base,Mode=TwoWay}"/>
                         <DataGridTextColumn Binding="{Binding asset_id_quote,Mode=TwoWay}"/>

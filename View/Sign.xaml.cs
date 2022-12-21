@@ -32,7 +32,7 @@ namespace Crypto
         private void ClearBtn_Click(object sender, RoutedEventArgs e)
         {
             EmailTB.Text = string.Empty;
-            PassTB.Text = string.Empty;
+            PassTB.Password = string.Empty;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -42,9 +42,9 @@ namespace Crypto
                 EmailTB.Text = "Incorrect email!";
                 return;
             }
-            else if (!OperationWithAccount.PasswordRegex(PassTB.Text))
+            else if (!OperationWithAccount.PasswordRegex(PassTB.Password))
             {
-                PassTB.Text = "Incorrect password!";
+                PassTB.Password = "Incorrect password!";
                 return;
             }
             else

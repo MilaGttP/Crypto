@@ -53,8 +53,8 @@
                     <TextBox x:Name="EmailTB" Grid.Column="1" Foreground="White" FontSize="30" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
                              Style="{DynamicResource MaterialDesignTextBox}"/>
 
-                    <TextBox x:Name="PassTB" Grid.Row="2" Grid.Column="1" Foreground="White" FontSize="30" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
-                             Style="{DynamicResource MaterialDesignTextBox}"/>
+                    <PasswordBox x:Name="PassTB" Grid.Row="2" Grid.Column="1" Foreground="White" FontSize="30" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
+                             Style="{DynamicResource MaterialDesignPasswordBox}"/>
 
                 </Grid>
             </Border>

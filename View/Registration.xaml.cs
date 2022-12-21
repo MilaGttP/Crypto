@@ -34,8 +34,8 @@ namespace Crypto
             NameTB.Text = string.Empty;
             SurnameTB.Text = string.Empty;
             EmailTB.Text = string.Empty;
-            PassTB.Text = string.Empty;
-            RepassTB.Text = string.Empty;
+            PassTB.Password = string.Empty;
+            RepassTB.Password = string.Empty;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -45,19 +45,19 @@ namespace Crypto
                 EmailTB.Text = "Incorrect email!";
                 return;
             }
-            else if (!OperationWithAccount.PasswordRegex(PassTB.Text))
+            else if (!OperationWithAccount.PasswordRegex(PassTB.Password))
             {
-                PassTB.Text = "Incorrect password!";
+                PassTB.Password = "Incorrect password!";
                 return;
             }
-            else if (! OperationWithAccount.PassRePass(PassTB.Text, RepassTB.Text))
+            else if (!OperationWithAccount.PassRePass(PassTB.Password, RepassTB.Password))
             {
-                RepassTB.Text = "Passwords must be the same!";
+                RepassTB.Password = "Passwords must be the same!";
                 return;
             }
             else
             {
-                OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Text);
+                OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Password);
                 Notecase notecase = new Notecase();
                 Accounts account = new Accounts();
                 account = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
