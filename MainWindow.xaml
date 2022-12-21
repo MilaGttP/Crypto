@@ -50,7 +50,7 @@
             <TextBlock Text="Crypto" Foreground="White" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0"/>
         </StackPanel>
 
-        <DataGrid x:Name="CoinsDG" Grid.Row="1" AutoGenerateColumns="False"  Grid.Column="0" Background="#3A4CA9" 
+        <DataGrid x:Name="CoinsDG" Grid.Row="1" AutoGenerateColumns="False"  Grid.Column="0" Background="#3A4CA9" FontSize="16"
                   Grid.RowSpan="3" Margin="10 0 5 15" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None" SelectedItem="{Binding SetIconsCurrencies, Mode=TwoWay}">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -82,15 +82,19 @@
             
         </materialDesign:Card>
         
-        <materialDesign:Card Background="#27378C" Foreground="White" FontSize="14" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
-            <DataGrid x:Name="RatesDG" GridLinesVisibility="None" AutoGenerateColumns="False" ItemsSource="{Binding Exchange.rates,Mode=TwoWay}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding asset_id_base,Mode=TwoWay}"/>
-                    <DataGridTextColumn Binding="{Binding asset_id_quote,Mode=TwoWay}"/>
-                    <DataGridTextColumn Binding="{Binding rate,Mode=TwoWay,StringFormat={}{0:F3}}"/>
-                    <DataGridTextColumn Binding="{Binding time,Mode=TwoWay}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+        <materialDesign:Card Background="#27378C" FontSize="20" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
+            <Grid>
+                <Label Content="Currency rates between base assets other coins" Foreground="White" FontSize="24" Padding="20"/>
+                <DataGrid x:Name="RatesDG" Foreground="#DEDEDE" Margin="0 20 0 0"  Padding="15" GridLinesVisibility="None" FontSize="14" AutoGenerateColumns="False" ItemsSource="{Binding Exchange.rates,Mode=TwoWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding asset_id_base,Mode=TwoWay}"/>
+                        <DataGridTextColumn Binding="{Binding asset_id_quote,Mode=TwoWay}"/>
+                        <DataGridTextColumn Binding="{Binding rate,Mode=TwoWay,StringFormat={}{0:F3}}"/>
+                        <DataGridTextColumn Binding="{Binding time,Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            
         </materialDesign:Card>
         
     </Grid>

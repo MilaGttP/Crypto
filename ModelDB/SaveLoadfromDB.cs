@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 
 namespace Crypto
@@ -24,7 +25,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
         //метод, щоб додати дії з покупки валюти до БД
@@ -41,7 +42,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
         //метод, щоб додати інформацію про гаманець користувача в БД
@@ -58,7 +59,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -85,7 +86,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             return history;
         }
@@ -104,7 +105,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             return account;
         }
@@ -129,7 +130,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             return wallet;
         }
@@ -153,7 +154,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -176,7 +177,7 @@ namespace Crypto
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
     }
