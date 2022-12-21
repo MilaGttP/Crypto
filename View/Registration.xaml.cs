@@ -58,7 +58,7 @@ namespace Crypto
             else
             {
                 OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Text);
-                MainWindow main = new MainWindow(NameTB.Text, SurnameTB.Text, EmailTB.Text);
+                Window main = new MainWindow(NameTB.Text, SurnameTB.Text, EmailTB.Text);
                 Window.GetWindow(this).Close();
                 main.ShowDialog();
             }

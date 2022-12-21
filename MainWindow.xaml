@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Crypto" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         mc:Ignorable="d"
-        Title="Crypto" Height="1024" Width="1440" Background="#04255E" WindowStartupLocation="CenterScreen">
+        Title="Crypto" Height="1024" Width="1440" Background="#04255E" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.75*"/>
@@ -21,10 +21,22 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
+        
         <Grid.InputBindings>
             <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding SelectedCurrencyCommand}"/>
         </Grid.InputBindings>
-        <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Sig" Height="32" FontSize="14" FontWeight="SemiBold" Click="SignBtn_Click"
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="25" Foreground="White" FontSize="18"/>
+            <TextBlock Grid.Row="1" x:Name="GreetTB" TextAlignment="Center" Padding="5" Foreground="White" FontSize="18"/>
+
+        </Grid>
+
+        <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Sign in" Height="32" FontSize="14" FontWeight="SemiBold" Click="SignBtn_Click"
                 Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" CommandParameter="SigIn"/>
 
         <Button x:Name="RegBtn" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Registration" Height="32" FontSize="14" FontWeight="SemiBold" Click="RegBtn_Click"

@@ -17,10 +17,10 @@ namespace Crypto
 {
     public partial class MainWindow : Window
     {
-        public MainViewModel mainViewModel;
-        private string name { get; set; }
-        private string surname { get; set; }
-        private string email { get; set; }
+        public MainViewModel ? mainViewModel { get; set; }
+        private string ? name { get; set; }
+        private string ? surname { get; set; }
+        private string ? email { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -33,11 +33,29 @@ namespace Crypto
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
         }
-        public MainWindow(string name, string surname, string email) : base()
+        public MainWindow(string name, string surname, string email)
         {
+            InitializeComponent();
+
+            mainViewModel = new MainViewModel();
+            DataContext = mainViewModel;
+            CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
+            mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
+            RatesDG.ItemsSource = mainViewModel.Exchange.rates;
+            mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
+            Switcher.pageSwitcher = this;
+
             this.name = name;
             this.surname = surname;
             this.email = email;
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (name != null && surname != null)
+            {
+                HelloTB.Text = "Hello, Dear";
+                GreetTB.Text = $"{this.name} {this.surname}!";
+            }
         }
         public void Navigate(UserControl nextPage) => this.Content = nextPage;
         public void Navigate(UserControl nextPage, object state)
