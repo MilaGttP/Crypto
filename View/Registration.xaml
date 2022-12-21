@@ -62,19 +62,19 @@
                     <TextBlock Grid.Row="8" Text="Re - password:" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 30 0"/>
 
                     <TextBox x:Name="NameTB" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
-                             Style="{DynamicResource MaterialDesignTextBox}"/>
+                             Style="{DynamicResource MaterialDesignTextBox}" Padding="15 0 0 0" />
 
                     <TextBox x:Name="SurnameTB" Grid.Row="2" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
-                             Style="{DynamicResource MaterialDesignTextBox}"/>
+                             Style="{DynamicResource MaterialDesignTextBox}" Padding="15 0 0 0"/>
 
                     <TextBox x:Name="EmailTB" Grid.Row="4" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
-                             Style="{DynamicResource MaterialDesignTextBox}"/>
+                             Style="{DynamicResource MaterialDesignTextBox}" Padding="15 0 0 0" />
 
                     <TextBox x:Name="PassTB" Grid.Row="6" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
-                             Style="{DynamicResource MaterialDesignTextBox}"/>
+                             Style="{DynamicResource MaterialDesignTextBox}" Padding="15 0 0 0" />
 
                     <TextBox x:Name="RepassTB" Grid.Row="8" Grid.Column="1" Foreground="White" FontSize="28" VerticalContentAlignment="Center" CaretBrush="White" Margin="15 10 15 10"
-                             Style="{DynamicResource MaterialDesignTextBox}"/>
+                             Style="{DynamicResource MaterialDesignTextBox}" Padding="15 0 0 0" />
 
                 </Grid>
             </Border>

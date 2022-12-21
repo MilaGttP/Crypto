@@ -7,7 +7,6 @@ namespace Crypto
 {
     public class MainItems
     {
-        public OperationWithAccount OperationWithAccount { get; set; }
         public OperationWithNotecase OperationWithNotecase { get; set; }
         public List<Currency> currencies { get; set; }
         public List<Icon> icons { get; set; }
@@ -22,7 +21,6 @@ namespace Crypto
                 icons = new List<Icon>();
                 setCurrencyAndIcon= new SetCurrencyAndIcon();
                 setCurrencyAndIcons = new List<SetCurrencyAndIcon>();
-                OperationWithAccount = new OperationWithAccount();
                 OperationWithNotecase = new OperationWithNotecase();
                 currencies = AdapterDataAPi.Get_currency_list().FindAll(s=>s.type_is_crypto==1&&s.price_usd!=null).
                 OrderBy(s => s.price_usd).Reverse().ToList(); ;

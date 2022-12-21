@@ -24,14 +24,14 @@
         <Grid.InputBindings>
             <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding SelectedCurrencyCommand}"/>
         </Grid.InputBindings>
-        <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="SigIn" Height="32" FontSize="14" FontWeight="SemiBold" Click="SignBtn_Click"
+        <Button x:Name="SignBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Sig" Height="32" FontSize="14" FontWeight="SemiBold" Click="SignBtn_Click"
                 Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" CommandParameter="SigIn"/>
 
         <Button x:Name="RegBtn" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Registration" Height="32" FontSize="14" FontWeight="SemiBold" Click="RegBtn_Click"
                 Width="110" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" CommandParameter="Registration"/>
 
         <TextBox x:Name="SearchTB" Grid.Column="2" Width="300" FontSize="14" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Right" Background="#1a237e" 
-                 Foreground="White" Margin="0 40 0 40" CaretBrush="White" IsReadOnlyCaretVisible="True" TextChanged="SearchTB_TextChanged"/>
+                 Foreground="White" Margin="0 40 0 40" CaretBrush="White" Padding="15 0 0 0" IsReadOnlyCaretVisible="True" TextChanged="SearchTB_TextChanged"/>
 
         <StackPanel Orientation="Horizontal">
             <Image Source="Logo/Counterparty.png" Width="55" Margin="20 0 0 0"/>
@@ -43,7 +43,7 @@
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontSize" Value="25"/>
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns >

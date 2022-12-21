@@ -40,7 +40,26 @@ namespace Crypto
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!OperationWithAccount.EmailRegex(EmailTB.Text))
+            {
+                EmailTB.Text = "Incorrect email!";
+                return;
+            }
+            else if (!OperationWithAccount.PasswordRegex(PassTB.Text))
+            {
+                PassTB.Text = "Incorrect password!";
+                return;
+            }
+            else if (! OperationWithAccount.PassRePass(PassTB.Text, RepassTB.Text))
+            {
+                RepassTB.Text = "Passwords must be the same!";
+                return;
+            }
+            else
+            {
+                OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Text);
+                BackBtn_Click(sender, e);
+            }
         }
     }
 }
