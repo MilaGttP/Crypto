@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Azure.Core.HttpHeader;
 
 namespace Crypto
 {
@@ -36,7 +37,25 @@ namespace Crypto
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!OperationWithAccount.EmailRegex(EmailTB.Text))
+            {
+                EmailTB.Text = "Incorrect email!";
+                return;
+            }
+            else if (!OperationWithAccount.PasswordRegex(PassTB.Text))
+            {
+                PassTB.Text = "Incorrect password!";
+                return;
+            }
+            else
+            {
+                Notecase notecase = new Notecase();
+                Accounts account = new Accounts();
+                account = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
+                Window main = new MainWindow(account);
+                Window.GetWindow(this).Close();
+                main.ShowDialog();
+            }
         }
     }
 }

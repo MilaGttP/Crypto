@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,7 @@ namespace Crypto
 {
     public partial class MainWindow : Window
     {
-        public MainViewModel ? mainViewModel { get; set; }
-        private string ? name { get; set; }
-        private string ? surname { get; set; }
-        private string ? email { get; set; }
+        private MainViewModel ? mainViewModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +31,7 @@ namespace Crypto
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
         }
-        public MainWindow(string name, string surname, string email)
+        public MainWindow(Accounts account)
         {
             InitializeComponent();
 
@@ -45,17 +43,15 @@ namespace Crypto
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
 
-            this.name = name;
-            this.surname = surname;
-            this.email = email;
+            mainViewModel.Accounts = account;
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (name != null && surname != null)
-            {
-                HelloTB.Text = "Hello, Dear";
-                GreetTB.Text = $"{this.name} {this.surname}!";
-            }
+            //if (mainViewModel.Accounts.Name != null && mainViewModel.Accounts.Surname != null)
+            //{
+            //    HelloTB.Text = "Hello, Dear";
+            //    GreetTB.Text = $"{mainViewModel.Accounts.Name} {mainViewModel.Accounts.Surname}!";
+            //}
         }
         public void Navigate(UserControl nextPage) => this.Content = nextPage;
         public void Navigate(UserControl nextPage, object state)

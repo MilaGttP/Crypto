@@ -14,6 +14,16 @@ namespace Crypto
         private MainItems mainItems { get; set; }
         private SetCurrencyAndIcon setIconsCurrency { get; set; }
         private ExchangeCurrentrate exchangeCurrentrate { get; set; }
+        private Accounts accounts { get; set; }
+        public Accounts Accounts
+        {
+            get { return accounts; }
+            set
+            {
+                accounts = value;
+                OnPropertyChanged(nameof(Url));
+            }
+        }
         private string url { get; set; }
         public string Url
         {

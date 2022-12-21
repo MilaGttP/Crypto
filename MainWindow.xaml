@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Crypto" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
         Title="Crypto" Height="1024" Width="1440" Background="#04255E" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -31,8 +32,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="25" Foreground="White" FontSize="18"/>
-            <TextBlock Grid.Row="1" x:Name="GreetTB" TextAlignment="Center" Padding="5" Foreground="White" FontSize="18"/>
+            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="30" Foreground="White" FontSize="18" Text="Hello, Dear"/>
+            <TextBlock Grid.Row="1" x:Name="GreetTB" TextAlignment="Center" Padding="10" Foreground="White" FontSize="18" Text="{Binding Accounts.Name, Mode=OneWayToSource}" />
 
         </Grid>
 
