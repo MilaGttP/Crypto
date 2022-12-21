@@ -24,7 +24,7 @@ namespace Crypto
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            Window main = new MainWindow();
+            MainWindow main = new MainWindow();
             Window.GetWindow(this).Close();
             main.ShowDialog();
         }
@@ -58,7 +58,9 @@ namespace Crypto
             else
             {
                 OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Text);
-                BackBtn_Click(sender, e);
+                MainWindow main = new MainWindow(NameTB.Text, SurnameTB.Text, EmailTB.Text);
+                Window.GetWindow(this).Close();
+                main.ShowDialog();
             }
         }
     }

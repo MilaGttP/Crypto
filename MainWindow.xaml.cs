@@ -18,6 +18,9 @@ namespace Crypto
     public partial class MainWindow : Window
     {
         public MainViewModel mainViewModel;
+        private string name { get; set; }
+        private string surname { get; set; }
+        private string email { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +32,12 @@ namespace Crypto
             RatesDG.ItemsSource = mainViewModel.Exchange.rates;
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
+        }
+        public MainWindow(string name, string surname, string email) : base()
+        {
+            this.name = name;
+            this.surname = surname;
+            this.email = email;
         }
         public void Navigate(UserControl nextPage) => this.Content = nextPage;
         public void Navigate(UserControl nextPage, object state)
