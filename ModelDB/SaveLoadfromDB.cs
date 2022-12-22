@@ -20,7 +20,7 @@ namespace Crypto
                 using (CryptoCurrencyDB currencyDB = new CryptoCurrencyDB())
                 {
                     currencyDB.Accounts.Add(accounts);
-                    currencyDB.SaveChangesAsync();
+                    currencyDB.SaveChanges();
                 }
             }
             catch (Exception ex)

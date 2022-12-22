@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Crypto.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,54 @@ namespace Crypto
         private SetCurrencyAndIcon setIconsCurrency { get; set; }
         private ExchangeCurrentrate exchangeCurrentrate { get; set; }
         private Accounts accounts { get; set; }
-        public Accounts Accounts
+        private Notecase notecase { get; set; }
+        private List<SetCurrencyAndIcon> set { get; set; }
+        private int amountCoine { get; set; }
+        private string errorBuy { get; set; }
+        public string ErrorBuy { 
+            get { return errorBuy; }
+            set
+            {
+                errorBuy = value;
+                OnPropertyChanged(nameof(ErrorBuy));
+            }
+        }
+
+        public int AmountCoine { 
+            get { 
+                return amountCoine;
+                }
+            set
+            {
+                this.amountCoine = value;
+                OnPropertyChanged(nameof(AmountCoine));
+            }
+            }
+        public List<SetCurrencyAndIcon> Set { get
+            {
+                return set;
+            }
+            set
+            {
+                set= value;
+                OnPropertyChanged(nameof (Set));
+            }
+            }
+        public Notecase Wallet { 
+            get { return notecase; }
+            set
+            {
+                notecase = value;
+                OnPropertyChanged(nameof(Wallet));
+            }
+        }
+        public Accounts Account
         {
             get { return accounts; }
             set
             {
                 accounts = value;
-                OnPropertyChanged(nameof(Url));
+                OnPropertyChanged(nameof(Account));
             }
         }
         private string url { get; set; }
@@ -77,11 +119,18 @@ namespace Crypto
         }
         public ICommand UpDateViewCommand { get; set; }
         public ICommand SelectedCurrencyCommand { get; set; }
+        public ICommand AddCoine { get; set; }
+        public ICommand BuyCommand { get; set; }
+        public ICommand ClearCommand { get; set; }
         public MainViewModel()
         {
+            set = new List<SetCurrencyAndIcon>();
             mainItems = new MainItems();
             UpDateViewCommand = new UpDateViewCommand(this);
             SelectedCurrencyCommand = new ClickIconMainCommand(this);
+            AddCoine = new AddCoinCommand(this);
+            BuyCommand= new BuyCoineCommand(this);
+            ClearCommand= new ClearCoineCommand(this);
         }
     }
 }

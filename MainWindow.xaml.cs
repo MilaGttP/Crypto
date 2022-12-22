@@ -28,6 +28,7 @@ namespace Crypto
             CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
             mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
             RatesDG.ItemsSource = mainViewModel.Exchange.rates;
+            WalletDG.ItemsSource = mainViewModel.Set;
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
             Switcher.pageSwitcher = this;
         }
@@ -40,10 +41,12 @@ namespace Crypto
             CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
             mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
             RatesDG.ItemsSource = mainViewModel.Exchange.rates;
+            //WalletDG.ItemsSource = mainViewModel.Set;
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
+            mainViewModel.Wallet = Authentification.notecase;
             Switcher.pageSwitcher = this;
 
-            mainViewModel.Accounts = account;
+            mainViewModel.Account = Authentification.accounts;
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

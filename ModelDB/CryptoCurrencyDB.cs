@@ -16,7 +16,7 @@ namespace Crypto
         public DbSet<Notecase> Notecase { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=SQL8003.site4now.net;Initial Catalog=db_a9158e_cryptodb;User Id=db_a9158e_cryptodb_admin;Password=wervnm7!");
+            optionsBuilder.UseSqlServer(@"Data Source=SQL8003.site4now.net;Initial Catalog=db_a9158e_cryptodb;User ID=db_a9158e_cryptodb_admin;Password=wervnm7!;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
     }
 }
