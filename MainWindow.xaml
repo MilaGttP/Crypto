@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
-        Title="Crypto" Height="1024" Width="1440" Background="#04255E" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+        Title="Crypto" Height="1024" Width="1440" Background="#04255E" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.75*"/>
@@ -32,8 +32,13 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="30" Foreground="White" FontSize="18"/>
-            <TextBlock Grid.Row="1" x:Name="GreetTB" TextAlignment="Center" Padding="10" Foreground="White" FontSize="18" Text="{Binding Account.Name, Mode=TwoWay}" />
+
+            <TextBlock x:Name="HelloTB" TextAlignment="Center" Padding="30" Foreground="White" FontSize="14"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock TextAlignment="Center" Padding="3" Foreground="White" FontSize="14"  Text="{Binding Account.Name, Mode=TwoWay}"/>
+                <TextBlock  TextAlignment="Center" Padding="3" Foreground="White" FontSize="14" Text="{Binding Account.Surname, Mode=TwoWay}"/>
+            </StackPanel>
+            
 
         </Grid>
 
@@ -89,21 +94,29 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="Balance:" Margin="5" Width="100" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                <Label Grid.Row="0" Grid.Column="0" Content="{Binding Wallet.Sum}" Margin="60 0 0 140"  Height="20"/>
-                <Label Content="Amount: " Margin="5 50 0 0"/>
-                <TextBox x:Name="AmountCoineTB" IsReadOnly="False" Margin="70 25 0 50" Height="30" Text="{Binding AmountCoine, Mode=TwoWay}" />
-                <TextBox  Margin="5 100 0 40" Text="{Binding ErrorBuy,Mode=TwoWay}" Foreground="Red" Height="40" IsReadOnly="True"/>
-                <StackPanel Grid.Row="0" Grid.Column="1" >
-                    <Button x:Name="ClearBtn" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Clear" Height="32" FontSize="14" FontWeight="SemiBold"
-                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="45 10 0 0" Command="{Binding ClearCommand,Mode=TwoWay}"/>
-                    <Button x:Name="AddBtn" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Add" Height="32" FontSize="14" FontWeight="SemiBold"
+
+                <TextBlock x:Name="ForBuyL" Grid.ColumnSpan="2" Grid.RowSpan="2" Text = "For buying - register or sign!" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" Foreground="#f2f2f2"/>
+
+                <Label x:Name="BalanceL" Visibility="Hidden" Foreground="White" FontSize="16" Content="Balance:" Margin="50 15 0 0" Padding="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <Label Foreground="White" Content="{Binding Wallet.Sum, Mode=TwoWay}" Margin="125 20 90 140" Height="25"/>
+                <Label x:Name="AmountL" Visibility="Hidden" Foreground="White" FontSize="16" Content="Amount: " Margin="50 55 0 0"/>
+
+                <TextBox x:Name="AmountCoineTB" Visibility="Hidden" IsReadOnly="False" Padding="5" Margin="125 32 90 50" Height="30" Text="{Binding AmountCoine, Mode=TwoWay}" />
+                <TextBox Margin="50 100 0 40" Text="{Binding ErrorBuy,Mode=TwoWay}" Foreground="Red" Height="40" IsReadOnly="True"/>
+                
+                <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                    <Button x:Name="ClearBtn" Visibility="Hidden" Grid.Row="0" Grid.Column="3" Foreground="White" Content="Clear" Height="32" FontSize="14" FontWeight="SemiBold"
+                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="45 55 0 0" Command="{Binding ClearCommand,Mode=TwoWay}"/>
+                    <Button x:Name="AddBtn" Visibility="Hidden" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Add" Height="32" FontSize="14" FontWeight="SemiBold"
                 Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="45 10 0 0" Command="{Binding AddCoine, Mode=TwoWay}" />
-                    <Button x:Name="BuyBtn" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Buy" Height="32" FontSize="14" FontWeight="SemiBold"
+                    <Button x:Name="BuyBtn" Visibility="Hidden" Grid.Row="0" Grid.Column="4" Foreground="White" Content="Buy" Height="32" FontSize="14" FontWeight="SemiBold"
+                Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="45 10 0 0" Command="{Binding BuyCommand, Mode=TwoWay}" />
+                    <Button x:Name="HistoryBtn" Visibility="Hidden" Grid.Row="0" Grid.Column="4" Foreground="White" Content="History" Height="32" FontSize="14" FontWeight="SemiBold"
                 Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}" Margin="45 10 0 0" Command="{Binding BuyCommand, Mode=TwoWay}" />
                 </StackPanel>
+                
                 <DataGrid x:Name="WalletDG" Grid.Row="1" AutoGenerateColumns="False"  Grid.Column="0"  FontSize="16"
-                  Grid.RowSpan="3" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None" ItemsSource="{Binding Set, Mode=TwoWay}" Margin="0 0 0 0">
+                  Grid.RowSpan="3" Foreground="#f2f2f2" IsReadOnly="True" GridLinesVisibility="None" ItemsSource="{Binding Set, Mode=TwoWay}" >
                     <DataGrid.Resources>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="Foreground" Value="White"/>
@@ -127,6 +140,7 @@
                 </DataGrid>
             </Grid>
         </materialDesign:Card>
+        
         <materialDesign:Card Background="#27378C" FontSize="20" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Margin="20 10 25 15">
             <Grid>
                 <Label Content="Currency rates between base assets other coins" Foreground="White" FontSize="24" Padding="20"/>
@@ -139,7 +153,6 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            
         </materialDesign:Card>
         
     </Grid>

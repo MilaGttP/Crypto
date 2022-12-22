@@ -46,15 +46,19 @@ namespace Crypto
             mainViewModel.Wallet = Authentification.notecase;
             Switcher.pageSwitcher = this;
 
+            HelloTB.Text = "Hello, Dear";
+            BalanceL.Visibility = Visibility.Visible;
+            AmountL.Visibility= Visibility.Visible;
+            AmountCoineTB.Visibility = Visibility.Visible;
+            ClearBtn.Visibility = Visibility.Visible;
+            AddBtn.Visibility = Visibility.Visible;
+            BuyBtn.Visibility = Visibility.Visible;
+            HistoryBtn.Visibility = Visibility.Visible;
+            ForBuyL.Visibility = Visibility.Hidden;
+
             mainViewModel.Account = Authentification.accounts;
         }
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            //if (mainViewModel.Accounts.Name != null && mainViewModel.Accounts.Surname != null)
-            //{
-            //    HelloTB.Text = "Hello, Dear";
-            //}
-        }
+
         public void Navigate(UserControl nextPage) => this.Content = nextPage;
         public void Navigate(UserControl nextPage, object state)
         {
