@@ -19,11 +19,11 @@ namespace Crypto
 {
     public partial class MainWindow : Window
     {
-        private MainViewModel ? mainViewModel { get; set; }
+        private MainViewModel? mainViewModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            
+
             mainViewModel = new MainViewModel();
             DataContext = mainViewModel;
             CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
@@ -51,15 +51,15 @@ namespace Crypto
 
             HelloTB.Text = "Hello, Dear";
             BalanceL.Visibility = Visibility.Visible;
-            AmountL.Visibility= Visibility.Visible;
+            AmountL.Visibility = Visibility.Visible;
             AmountCoineTB.Visibility = Visibility.Visible;
             ClearBtn.Visibility = Visibility.Visible;
             AddBtn.Visibility = Visibility.Visible;
             BuyBtn.Visibility = Visibility.Visible;
             HistoryBtn.Visibility = Visibility.Visible;
             ForBuyL.Visibility = Visibility.Hidden;
-            AmountL.Visibility = Visibility.Visible; 
-            WalletL.Visibility = Visibility.Visible; 
+            AmountL.Visibility = Visibility.Visible;
+            WalletL.Visibility = Visibility.Visible;
             BalanceL.Visibility = Visibility.Visible;
             HistoryL.Visibility = Visibility.Visible;
 
