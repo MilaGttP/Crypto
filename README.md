@@ -7,6 +7,7 @@
 Front end - Еванесян Нане, Стукан Андрій
 Back end - Наконешнюк Ірина, Іванова Людмила
 
+
 #Team project to review the development of cryptocurrency.
 Basic possibilities: revision of the list of crypto-currencies, matching of 1 currency with the others, sending currencies, registration and entry to the account, review of purchase history
 
