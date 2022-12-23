@@ -67,7 +67,7 @@ namespace Crypto
         //Отримати результат- List<History> history = new List<History>();
         //var tmp = SaveLoadfromDB.GetAccountHistory(1);
         //history = tmp.Result;
-        public static List<HistoryAccount> GetAccountHistory(int IdUser)
+        public static List<HistoryAccount> GetAccountHistory(int ?IdUser)
         {
             List<HistoryAccount> history = new List<HistoryAccount>();
             try

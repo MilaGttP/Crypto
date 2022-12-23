@@ -23,15 +23,21 @@ namespace Crypto.Commands
 
         public void Execute(object? parameter)
         {
-            if ((ViewModel.Set[0].price * ViewModel.AmountCoine)> ViewModel.Wallet.Sum)
+            if (ViewModel.AmountCoine != 0)
             {
-                ViewModel.ErrorBuy = "Insufficient funds!";
-                ViewModel.AmountCoine= 0;
-            }
-            else
-            {
-                SaveLoadfromDB.UpdateWallet(ViewModel.Wallet.Id, (ViewModel.Set[0].price * ViewModel.AmountCoine));
-                ViewModel.Wallet= SaveLoadfromDB.GetAccountWallet(ViewModel.Account.Id); 
+                decimal? Sum = ViewModel.Set[0].price * ViewModel.AmountCoine;
+                if (Sum > ViewModel.Wallet.Sum)
+                {
+                    ViewModel.ErrorBuy = "Insufficient funds!";
+                    ViewModel.AmountCoine = 0;
+                }
+                else
+                {
+                    ViewModel.MainItem.OperationWithNotecase.MakePurchaseCoine(Sum, ViewModel.Wallet, ViewModel.Set[0].name);
+                    ViewModel.Wallet = SaveLoadfromDB.GetAccountWallet(ViewModel.Account.Id);
+                    ViewModel.Set.Clear();
+                    ViewModel.Set=null ;
+                }
             }
         }
     }

@@ -20,6 +20,33 @@ namespace Crypto
         private List<SetCurrencyAndIcon> set { get; set; }
         private int amountCoine { get; set; }
         private string errorBuy { get; set; }
+        private Currency currency_selected { get; set; }
+        private List<HistoryAccount> historyAccounts { get; set; }
+        public List<HistoryAccount> HistoryAccounts
+        {
+            get
+            {
+                return historyAccounts;
+            }
+            set
+            {
+                historyAccounts = value;
+                OnPropertyChanged(nameof(HistoryAccounts));
+            }
+        }
+
+        public Currency Currency_Selected
+        {
+            get
+            {
+                return currency_selected;
+            }
+            set
+            {
+                currency_selected = value;
+                OnPropertyChanged(nameof(Currency_Selected));
+            }
+        }
         public string ErrorBuy { 
             get { return errorBuy; }
             set
@@ -117,20 +144,20 @@ namespace Crypto
                 OnPropertyChanged(nameof(SelectedViewModel));
             }
         }
-        public ICommand UpDateViewCommand { get; set; }
         public ICommand SelectedCurrencyCommand { get; set; }
         public ICommand AddCoine { get; set; }
         public ICommand BuyCommand { get; set; }
         public ICommand ClearCommand { get; set; }
+        public ICommand GetHistroryCommand { get; set; }
         public MainViewModel()
         {
             set = new List<SetCurrencyAndIcon>();
             mainItems = new MainItems();
-            UpDateViewCommand = new UpDateViewCommand(this);
             SelectedCurrencyCommand = new ClickIconMainCommand(this);
             AddCoine = new AddCoinCommand(this);
             BuyCommand= new BuyCoineCommand(this);
             ClearCommand= new ClearCoineCommand(this);
+            GetHistroryCommand = new GetHistoryWalletCommand(this);
         }
     }
 }

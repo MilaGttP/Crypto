@@ -40,32 +40,35 @@ namespace Crypto
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            //if (!OperationWithAccount.EmailRegex(EmailTB.Text))
-            //{
-            //    EmailTB.Text = "Incorrect email!";
-            //    return;
-            //}
-            //else if (!OperationWithAccount.PasswordRegex(PassTB.Password))
-            //{
-            //    PassTB.Password = "Incorrect password!";
-            //    return;
-            //}
-            //else if (!OperationWithAccount.PassRePass(PassTB.Password, RepassTB.Password))
-            //{
-            //    RepassTB.Password = "Passwords must be the same!";
-            //    return;
-            //}
-            //else
-            //{
-
-            //}
-            OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Password);
-            Notecase notecase = new Notecase();
-            Authentification.accounts = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
-            Authentification.notecase = notecase;
-            Window main = new MainWindow(Authentification.accounts);
-            Window.GetWindow(this).Close();
-            main.ShowDialog();
+            if (!OperationWithAccount.EmailRegex(EmailTB.Text))
+            {
+                EmailTB.Text = "Incorrect email!";
+                return;
+            }
+            else if (!OperationWithAccount.PasswordRegex(PassTB.Password))
+            {
+                PassTB.BorderBrush = Brushes.Red;
+                RepassTB.Clear();
+                return;
+            }
+            else if (!OperationWithAccount.PassRePass(PassTB.Password, RepassTB.Password))
+            {
+                RepassTB.BorderBrush = Brushes.Red;
+                PassTB.BorderBrush = Brushes.Red;
+                RepassTB.Clear();
+                PassTB.Clear();
+                return;
+            }
+            else
+            {
+                OperationWithAccount.Registration(NameTB.Text, SurnameTB.Text, EmailTB.Text, PassTB.Password);
+                Notecase notecase = new Notecase();
+                Authentification.accounts = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
+                Authentification.notecase = notecase;
+                Window main = new MainWindow(Authentification.accounts);
+                Window.GetWindow(this).Close();
+                main.ShowDialog();
+            }   
         }
     }
 }

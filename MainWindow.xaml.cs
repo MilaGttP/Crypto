@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Crypto.Page;
 
 namespace Crypto
 {
@@ -27,6 +28,7 @@ namespace Crypto
             DataContext = mainViewModel;
             CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
             mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
+            mainViewModel.Currency_Selected = mainViewModel.MainItem.currencies.Find(s => s.asset_id == "BTC");
             RatesDG.ItemsSource = mainViewModel.Exchange.rates;
             WalletDG.ItemsSource = mainViewModel.Set;
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
@@ -40,6 +42,7 @@ namespace Crypto
             DataContext = mainViewModel;
             CoinsDG.ItemsSource = mainViewModel.MainItem.setCurrencyAndIcons;
             mainViewModel.Exchange = AdapterDataAPi.Get_all_exchangerate("BTC");
+            mainViewModel.Currency_Selected = mainViewModel.MainItem.currencies.Find(s => s.asset_id == "BTC");
             RatesDG.ItemsSource = mainViewModel.Exchange.rates;
             //WalletDG.ItemsSource = mainViewModel.Set;
             mainViewModel.Url = AdapterDataAPi.Get_icon_list(32).Find(i => i.asset_id == "BTC").url;
@@ -55,6 +58,10 @@ namespace Crypto
             BuyBtn.Visibility = Visibility.Visible;
             HistoryBtn.Visibility = Visibility.Visible;
             ForBuyL.Visibility = Visibility.Hidden;
+            AmountL.Visibility = Visibility.Visible; 
+            WalletL.Visibility = Visibility.Visible; 
+            BalanceL.Visibility = Visibility.Visible;
+            HistoryL.Visibility = Visibility.Visible;
 
             mainViewModel.Account = Authentification.accounts;
         }

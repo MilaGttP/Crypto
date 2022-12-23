@@ -37,31 +37,28 @@ namespace Crypto
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            //if (!OperationWithAccount.EmailRegex(EmailTB.Text))
-            //{
-            //    EmailTB.Text = "Incorrect email!";
-            //    return;
-            //}
-            //else if (!OperationWithAccount.PasswordRegex(PassTB.Password))
-            //{
-            //    PassTB.Password = "Incorrect password!";
-            //    return;
-            //}
-            //else
-            //{
-            //    Notecase note = new Notecase();
-            //    Accounts account = new Accounts();
-            //    account = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
-            //    Window main = new MainWindow(account);
-            //    Window.GetWindow(this).Close();
-            //    main.ShowDialog();
-            //}
-            Notecase notecase = new Notecase();
-            Authentification.accounts = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
-            Authentification.notecase = notecase;
-            Window main = new MainWindow(Authentification.accounts);
-            Window.GetWindow(this).Close();
-            main.ShowDialog();
+            Accounts accounts = SaveLoadfromDB.GetAccount(EmailTB.Text);
+            if (!OperationWithAccount.EmailRegex(EmailTB.Text) || accounts == null)
+            {
+                EmailTB.Text = "Incorrect email!";
+                return;
+            }
+            else if (!OperationWithAccount.PasswordRegex(PassTB.Password)|| !OperationWithAccount.IsPasswordCorrect(accounts, PassTB.Password))
+            {
+                PassTB.BorderBrush= Brushes.Red;
+                PassTB.Clear();
+                return;
+            }
+            else
+            {
+                Notecase notecase = new Notecase();
+                Authentification.accounts = OperationWithAccount.SignIn(EmailTB.Text, ref notecase);
+                Authentification.notecase = notecase;
+                Window main = new MainWindow(Authentification.accounts);
+                Window.GetWindow(this).Close();
+                main.ShowDialog();
+            }
+            
         }
     }
 }

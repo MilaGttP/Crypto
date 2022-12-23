@@ -28,6 +28,7 @@ namespace Crypto
         {
             viewModel.Exchange = AdapterDataAPi.Get_all_exchangerate(viewModel.SetIconsCurrencies.name);
             viewModel.Url = viewModel.MainItem.setCurrencyAndIcons.Find(i => i.name == viewModel.SetIconsCurrencies.name).iconUrl;
+            viewModel.Currency_Selected = viewModel.MainItem.currencies.Find(s => s.asset_id == viewModel.SetIconsCurrencies.name);
         }
     }
 }

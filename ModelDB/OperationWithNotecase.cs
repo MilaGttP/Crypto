@@ -42,21 +42,16 @@ namespace Crypto
         }
 
         //метод для зміни залишку після здійснення покупки
-        public void MakePurchaseCoine( List<Currency>currency, ref Notecase notecase)
+        public void MakePurchaseCoine( decimal ? Sum,  Notecase notecase, string id_assets)
         {
-            decimal? Sum = 0;
-            currency.ForEach(s =>Sum+=s.price_usd);
             if (IsEnoughMoneyOfBalance(Sum, notecase))
             {
                 notecase.Sum-= Sum;
                 SaveLoadfromDB.UpdateWallet(notecase.Id, notecase.Sum);
-                foreach(Currency currency2 in currency)
-                {
-                    HistoryAccount historyAccount = new HistoryAccount(notecase.Id_account,currency2.asset_id,
-                        DateTime.UtcNow, currency2.price_usd);
-                    SaveLoadfromDB.AddHistoryDB(historyAccount);
-                }
                 
+                    HistoryAccount historyAccount = new HistoryAccount(notecase.Id_account, id_assets,
+                        DateTime.UtcNow, Sum);
+                    SaveLoadfromDB.AddHistoryDB(historyAccount);
             }
         }
     }
