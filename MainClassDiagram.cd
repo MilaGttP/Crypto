@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Crypto.BadRequestException" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExceptionApi\BadRequestException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.CoinApiException" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExceptionApi\CoinApiExceptioncs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.ForbiddenException" Collapsed="true">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="Crypto.CoinApiException" ManuallyRouted="true">
+      <Path>
+        <Point X="3" Y="1.5" />
+        <Point X="3" Y="1.608" />
+        <Point X="1.75" Y="1.608" />
+        <Point X="1.75" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExceptionApi\ForbiddenException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.NoDataException" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExceptionApi\NoDataException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.TooManyRequestsException" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExceptionApi\TooManyRequestsException .cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.UnauthorizedException" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExceptionApi\UnauthorizedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.AdapterDataAPi">
+    <Position X="1.25" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAACABQAAACAA=</HashCode>
+      <FileName>ApiData\AdapterDataApi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.ApiEndpointUrls">
+    <Position X="1.25" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAgAAAAAAAABAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ApiData\ApiEndpointUrls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.ApiRestClient">
+    <Position X="1.25" Y="10" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAEAAAEAAAAAAAkAgAAABDIAAAAAgAAAAAAAA=</HashCode>
+      <FileName>ApiData\ApiRestClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Currency">
+    <Position X="6.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAABAAAAAQAAACAAEABBCVIIgggABABA=</HashCode>
+      <FileName>ApiData\Currency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ErrorMessage">
+    <Position X="4.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ApiData\ErrorMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExchangeCurrentrate">
+    <Position X="4.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\ExchangeCurrentrate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exchangerate">
+    <Position X="3.75" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ApiData\Exchangerate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Icon">
+    <Position X="5.25" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ApiData\Icon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rate">
+    <Position X="5.25" Y="12.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ApiData\Rate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.Commands.AddCoinCommand">
+    <Position X="7" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\AddCoinCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.Commands.BuyCoineCommand">
+    <Position X="10" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\BuyCoineCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.Commands.ClearCoineCommand">
+    <Position X="13.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ClearCoineCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.ClickIconMainCommand">
+    <Position X="16.5" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ClickIconMainCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.Commands.GetHistoryWalletCommand">
+    <Position X="20.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\GetHistoryWalletCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.MainItems">
+    <Position X="11" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAIQAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Facade\MainItems.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.SetCurrencyAndIcon">
+    <Position X="14.5" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAIAAAAAAAAAAAAAAESAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Facade\SetCurrencyAndIcon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.Accounts">
+    <Position X="29" Y="3" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQABAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ModelDB\Accounts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.Authentification">
+    <Position X="30" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelDB\Authentification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.CryptoCurrencyDB">
+    <Position X="32.75" Y="0.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQCAAAAAAAAAAAAAAAAAAACAAAQAAAAAAAA=</HashCode>
+      <FileName>ModelDB\CryptoCurrencyDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.HistoryAccount">
+    <Position X="33" Y="3.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAABAAAAAACAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModelDB\HistoryAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.Notecase">
+    <Position X="34.25" Y="9.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAAAAAAAAgAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ModelDB\Notecase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.OperationWithAccount">
+    <Position X="33.25" Y="6.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAACAAAQAAAAgAAAAAAAAAAIAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>ModelDB\OperationWithAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.OperationWithNotecase">
+    <Position X="28.75" Y="6.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ModelDB\OperationWithNotecase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.SaveLoadfromDB">
+    <Position X="29.25" Y="9.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAACAAAACAAAAAAAAAAAAAEAAAAAIUIAAAA=</HashCode>
+      <FileName>ModelDB\SaveLoadfromDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.Registration">
+    <Position X="20.25" Y="4.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Registration.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.Sign">
+    <Position X="24" Y="4.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\Sign.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.BaseViewModel">
+    <Position X="13.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Crypto.ChangedRatesMV">
+    <Position X="13.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQEAAAAAA=</HashCode>
+      <FileName>ViewModels\ChangedRatesMV.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.MainViewModel">
+    <Position X="16.25" Y="9.25" Width="4" />
+    <TypeIdentifier>
+      <HashCode>QAAABMAAAAEABAAQgQQAAEAEAqAIHAAACgQQMQgAAEA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.Switcher">
+    <Position X="9.75" Y="12.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Switcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Crypto.MainWindow">
+    <Position X="21.5" Y="7" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAIAAAAAAAAAAAACAAgQAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Crypto.ISwitchable">
+    <Position X="10.75" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\Switcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
