@@ -120,7 +120,7 @@
                 <TextBox x:Name="AmountCoineTB" CaretBrush="White" FontSize="16" Visibility="Hidden" IsReadOnly="False" Padding="5" Grid.Row="2" Margin="0 0 0 20"   Grid.Column="1" Height="30" Text="{Binding AmountCoine, Mode=TwoWay}" />
                 
                 <!--<Label Grid.Column="1" Content="{Binding ErrorBuy,Mode=TwoWay}" Foreground="Red" Height="40" />-->
-                <TextBox Grid.Column="1" Text="{Binding ErrorBuy,Mode=TwoWay}" Foreground="Red" Height="40" IsReadOnly="True"/>
+                <TextBox x:Name="ErrTB" Visibility="Hidden" Grid.Column="1" Text="{Binding ErrorBuy,Mode=TwoWay}" Foreground="Red" Height="40" IsReadOnly="True"/>
 
                 <Button x:Name="ClearBtn"  Grid.Row="1" Grid.Column="4" Foreground="White" Content="Clear" Height="32" FontSize="14" FontWeight="SemiBold" Margin="0 0 90 0" Visibility="Hidden"
                 Width="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource MaterialDesignRaisedButton}"  Command="{Binding ClearCommand,Mode=TwoWay}" />

@@ -62,6 +62,7 @@ namespace Crypto
             WalletL.Visibility = Visibility.Visible;
             BalanceL.Visibility = Visibility.Visible;
             HistoryL.Visibility = Visibility.Visible;
+            ErrTB.Visibility = Visibility.Visible;   
 
             mainViewModel.Account = Authentification.accounts;
         }
